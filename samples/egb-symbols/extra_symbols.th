@@ -606,7 +606,7 @@ layout extra_symbols
 			endfor;
 		enddef;
 		
-		def p_u_flying_saucer_stalactite(expr pos,theta,sc,al) =
+		def p_u_disc_stalactite(expr pos,theta,sc,al) =
 			U:=(.15u, .4u);
 			T:=identity aligned al rotated theta scaled sc shifted pos;
 			pickup PenC;
@@ -615,7 +615,7 @@ layout extra_symbols
 			thdraw (-.15u,-.1u) -- (.15u,-.1u);
 		enddef;
 		
-		def p_u_flying_saucer_stalagmite(expr pos,theta,sc,al) =
+		def p_u_disc_stalagmite(expr pos,theta,sc,al) =
 			U:=(.15u, .4u);
 			T:=identity aligned al rotated theta scaled sc shifted pos;
 			pickup PenC;
@@ -624,7 +624,7 @@ layout extra_symbols
 			thdraw (-.15u,.1u) -- (.15u,.1u);
 		enddef;
 		
-		def p_u_flying_saucer_column(expr pos,theta,sc,al) =
+		def p_u_disc_pillar(expr pos,theta,sc,al) =
 			U:=(.15u, .4u);
 			T:=identity aligned al rotated theta scaled sc shifted pos;
 			pickup PenC;
@@ -634,7 +634,7 @@ layout extra_symbols
 			thdraw (-.15u,0) -- (.15u,0);
 		enddef;
 		
-		def p_u_flying_saucers_stalactites(expr pos,theta,sc,al) =
+		def p_u_discs_stalactites(expr pos,theta,sc,al) =
 			U:=(.3u, .8u);
 			pickup PenC;
 			for i=-1 upto 1:
@@ -645,7 +645,7 @@ layout extra_symbols
 			endfor;
 		enddef;
 		
-		def p_u_flying_saucers_stalagmites(expr pos,theta,sc,al) =
+		def p_u_discs_stalagmites(expr pos,theta,sc,al) =
 			U:=(.3u, .8u);
 			pickup PenC;
 			for i=-1 upto 1:
@@ -656,7 +656,7 @@ layout extra_symbols
 			endfor;
 		enddef;
 		
-		def p_u_flying_saucers_columns(expr pos,theta,sc,al) =
+		def p_u_discs_pillars(expr pos,theta,sc,al) =
 			U:=(.3u, .8u);
 			pickup PenC;
 			for i=-1 upto 1:
@@ -747,23 +747,23 @@ text pt "point u:stalagmite_stalactite" "estalagmite e estalactite"
 text en "point u:stalagmites_stalactites" "stalagmites and stalactites"
 text pt "point u:stalagmites_stalactites" "estalagmites e estalactites"
 
-text en "point u:flying_saucer_stalactite" "flying saucer on stalactite"
-text pt "point u:flying_saucer_stalactite" "disco voador em estalactite"
+text en "point u:disc_stalactite" "disc at stalactite"
+text pt "point u:disc_stalactite" "disco em estalactite"
 
-text en "point u:flying_saucer_stalagmite" "flying saucer on stalagmite"
-text pt "point u:flying_saucer_stalagmite" "disco voador em estalagmite"
+text en "point u:disc_stalagmite" "disc at stalagmite"
+text pt "point u:disc_stalagmite" "disco em estalagmite"
 
-text en "point u:flying_saucer_column" "flying saucer on column"
-text pt "point u:flying_saucer_column" "disco voador em coluna"
+text en "point u:disc_pillar" "disc at pillar"
+text pt "point u:disc_pillar" "disco em coluna"
 
-text en "point u:flying_saucers_stalactites" "flying saucers on stalactites"
-text pt "point u:flying_saucers_stalactites" "discos voadores em estalactites"
+text en "point u:discs_stalactites" "discs at stalactites"
+text pt "point u:discs_stalactites" "discos em estalactites"
 
-text en "point u:flying_saucers_stalagmites" "flying saucers on stalagmites"
-text pt "point u:flying_saucers_stalagmites" "discos voadores em estalagmites"
+text en "point u:discs_stalagmites" "discs at stalagmites"
+text pt "point u:discs_stalagmites" "discos em estalagmites"
 
-text en "point u:flying_saucers_columns" "flying saucers on columns"
-text pt "point u:flying_saucers_columns" "discos voadores em colunas"
+text en "point u:discs_pillars" "discs at pillars"
+text pt "point u:discs_pillars" "discos em colunas"
 
 text en "line u:rimstonedam" "rimstone dam"
 text pt "line u:rimstonedam" "travertino seco"

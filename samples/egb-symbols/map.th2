@@ -37,6 +37,12 @@ point 735.0 480.0 u:bat
 point 755.0 480.0 curtain
 point 775.0 480.0 u:bone
 point 795.0 480.0 u:curtains
+point 595.0 510.0 u:disc_stalactite
+point 615.0 510.0 u:disc_stalagmite
+point 635.0 510.0 u:disc_pillar
+point 655.0 510.0 u:discs_stalactites
+point 675.0 510.0 u:discs_stalagmites
+point 695.0 510.0 u:discs_pillars
 #! or
 
 #!CODE

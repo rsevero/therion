@@ -34,7 +34,9 @@ point 675.0 480.0 u:photo -orientation 123
 point 695.0 480.0 u:archeo_excavation
 point 715.0 480.0 u:audio
 point 735.0 480.0 u:bat
-point 755.0 480.0 u:bone
+point 755.0 480.0 curtain
+point 775.0 480.0 u:bone
+point 795.0 480.0 u:curtains
 #! or
 
 #!CODE

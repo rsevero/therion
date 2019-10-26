@@ -567,6 +567,16 @@ layout extra_symbols
 			thdraw bone withcolor black;
 		enddef;
 
+		def p_u_curtains(expr pos, theta, sc, al) = 
+			U:=(.3u, .8u);
+			pickup PenC;
+			for i=-1 upto 1:
+				T:=identity aligned al rotated theta scaled (sc * 0.7) shifted (pos + (i * .3u, abs(i) * .15u));
+				thdraw (-.15u,.4u)--(0,.15u)--(.15u,.4u);
+				thdraw (0,.15u)--(0,0){dir 180}..(-.12u,-.11u)..{dir 0}(0,-.22u)--(0,-.4u);
+			endfor;
+		enddef;
+
 		def p_u_raft_cone (expr pos,theta,sc,al)=
 			U:=(.3u,.4u);
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -585,11 +595,10 @@ layout extra_symbols
 		enddef;
 
 		def p_u_stalagmites_stalactites (expr pos,theta,sc,al) =
-			U:=(.3u, .2u);
-			T:=identity aligned al rotated theta scaled sc shifted pos;
+			U:=(.3u, .8u);
 			pickup PenC;
 			for i=-1 upto 1:
-				T:=identity aligned al rotated theta scaled (sc * 0.7) shifted (pos + (i * .3u, 0));
+				T:=identity aligned al rotated theta scaled (sc * 0.7) shifted (pos + (i * .3u, abs(i) * .15u));
 				thdraw (-.15u,.4u) -- (0,.2u) -- (0,.1u);
 				thdraw (0,-.1u) -- (0,-.2u) -- (-.15u,-.4u);
 				thdraw (0,-.2u) -- (.15u,-.4u);
@@ -598,39 +607,38 @@ layout extra_symbols
 		enddef;
 		
 		def p_u_flying_saucer_stalactite(expr pos,theta,sc,al) =
-		  U:=(.15u, .4u);
-		  T:=identity aligned al rotated theta scaled sc shifted pos;
-		  pickup PenC;
-		  thdraw (0,-.4u) -- (0,.15u) -- (-.15u,.4u);
-		  thdraw (0,.15u) -- (.15u,.4u);
-		  thdraw (-.15u,-.1u) -- (.15u,-.1u);
+			U:=(.15u, .4u);
+			T:=identity aligned al rotated theta scaled sc shifted pos;
+			pickup PenC;
+			thdraw (0,-.4u) -- (0,.15u) -- (-.15u,.4u);
+			thdraw (0,.15u) -- (.15u,.4u);
+			thdraw (-.15u,-.1u) -- (.15u,-.1u);
 		enddef;
 		
 		def p_u_flying_saucer_stalagmite(expr pos,theta,sc,al) =
-		  U:=(.15u, .4u);
-		  T:=identity aligned al rotated theta scaled sc shifted pos;
-		  pickup PenC;
+			U:=(.15u, .4u);
+			T:=identity aligned al rotated theta scaled sc shifted pos;
+			pickup PenC;
 			thdraw (0,.4u) -- (0,-.15u) -- (-.15u,-.4u);
 			thdraw (0,-.15u) -- (.15u,-.4u);
-		  thdraw (-.15u,.1u) -- (.15u,.1u);
+			thdraw (-.15u,.1u) -- (.15u,.1u);
 		enddef;
 		
 		def p_u_flying_saucer_column(expr pos,theta,sc,al) =
-		  U:=(.15u, .4u);
-		  T:=identity aligned al rotated theta scaled sc shifted pos;
-		  pickup PenC;
+			U:=(.15u, .4u);
+			T:=identity aligned al rotated theta scaled sc shifted pos;
+			pickup PenC;
 			thdraw (-.15u,.4u) -- (0,.15u) -- (0,-.15u) -- (-.15u,-.4u);
 			thdraw (0,-.15u) -- (.15u,-.4u);
 			thdraw (0,.15u) -- (.15u,.4u);
-		  thdraw (-.15u,0) -- (.15u,0);
+			thdraw (-.15u,0) -- (.15u,0);
 		enddef;
 		
 		def p_u_flying_saucers_stalactites(expr pos,theta,sc,al) =
-			U:=(.3u, .2u);
-			T:=identity aligned al rotated theta scaled sc shifted pos;
+			U:=(.3u, .8u);
 			pickup PenC;
 			for i=-1 upto 1:
-				T:=identity aligned al rotated theta scaled (sc * 0.7) shifted (pos + (i * .3u, 0));
+				T:=identity aligned al rotated theta scaled (sc * 0.7) shifted (pos + (i * .3u, abs(i) * .15u));
 				thdraw (0,-.4u) -- (0,.15u) -- (-.15u,.4u);
 				thdraw (0,.15u) -- (.15u,.4u);
 				thdraw (-.15u,-.1u) -- (.15u,-.1u);
@@ -638,11 +646,10 @@ layout extra_symbols
 		enddef;
 		
 		def p_u_flying_saucers_stalagmites(expr pos,theta,sc,al) =
-			U:=(.3u, .2u);
-			T:=identity aligned al rotated theta scaled sc shifted pos;
+			U:=(.3u, .8u);
 			pickup PenC;
 			for i=-1 upto 1:
-				T:=identity aligned al rotated theta scaled (sc * 0.7) shifted (pos + (i * .3u, 0));
+				T:=identity aligned al rotated theta scaled (sc * 0.7) shifted (pos + (i * .3u, abs(i) * .15u));
 				thdraw (0,.4u) -- (0,-.15u) -- (-.15u,-.4u);
 				thdraw (0,-.15u) -- (.15u,-.4u);
 				thdraw (-.15u,.1u) -- (.15u,.1u);
@@ -650,11 +657,10 @@ layout extra_symbols
 		enddef;
 		
 		def p_u_flying_saucers_columns(expr pos,theta,sc,al) =
-			U:=(.3u, .2u);
-			T:=identity aligned al rotated theta scaled sc shifted pos;
+			U:=(.3u, .8u);
 			pickup PenC;
 			for i=-1 upto 1:
-				T:=identity aligned al rotated theta scaled (sc * 0.7) shifted (pos + (i * .3u, 0));
+				T:=identity aligned al rotated theta scaled (sc * 0.7) shifted (pos + (i * .3u, abs(i) * .15u));
 				thdraw (-.15u,.4u) -- (0,.15u) -- (0,-.15u) -- (-.15u,-.4u);
 				thdraw (0,-.15u) -- (.15u,-.4u);
 				thdraw (0,.15u) -- (.15u,.4u);
@@ -728,6 +734,9 @@ text pt "point u:bat" "morcego"
 
 text en "point u:bone" "bone"
 text pt "point u:bone" "osso"
+
+text en "point u:curtains" "curtains"
+text pt "point u:curtains" "cortinas"
 
 text en "point u:raft_cone" "raft cone"
 text pt "point u:raft_cone" "cone"

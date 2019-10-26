@@ -621,7 +621,7 @@ layout extra_symbols
 				thdraw (0,.2u) -- (.15u,.4u);
 			endfor;
 		enddef;
-		
+
 		def p_u_disc_stalactite(expr pos,theta,sc,al) =
 			U:=(.15u, .4u);
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -660,7 +660,7 @@ layout extra_symbols
 				thdraw (-.15u,-.1u) -- (.15u,-.1u);
 			endfor;
 		enddef;
-		
+
 		def p_u_discs_stalagmites(expr pos,theta,sc,al) =
 			U:=(.3u, .8u);
 			pickup PenC;
@@ -671,7 +671,7 @@ layout extra_symbols
 				thdraw (-.15u,.1u) -- (.15u,.1u);
 			endfor;
 		enddef;
-		
+
 		def p_u_discs_pillars(expr pos,theta,sc,al) =
 			U:=(.3u, .8u);
 			pickup PenC;

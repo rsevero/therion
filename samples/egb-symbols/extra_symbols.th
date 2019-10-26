@@ -705,6 +705,29 @@ layout extra_symbols
 			thdraw mud_crack withcolor black;
 		enddef;
 
+		picture pendant_raw;
+	 	pendant_raw := image(
+			pickup pencircle scaled 11.338600bp;
+			linecap := butt;
+			linejoin := mitered;
+			draw (161.371002,550.137024)--(356.835999,550.137024);
+			pickup pencircle scaled 3.401580bp;
+			draw (257.589996,550.895020)--(257.589996,444.828003);
+			pickup pencircle scaled 2.834650bp;
+			draw (308.347992,547.867004)--(308.347992,471.347992);
+			pickup pencircle scaled 3.968500bp;
+			draw (193.949005,547.867004)--(193.949005,425.890991);
+			pickup pencircle scaled 2.125980bp;
+			draw (221.223007,549.379028)--(221.223007,510.742004);
+		);
+		picture pendant;
+		pendant := pendant_raw shifted (-(llcorner pendant_raw)-(urcorner pendant_raw - llcorner pendant_raw)/2) scaled (2u / 3 / ((xpart urcorner pendant_raw) - (xpart llcorner pendant_raw)));
+
+		def p_u_pendant(expr pos, theta, sc, al) = 
+			T:=identity aligned al rotated theta scaled sc shifted pos;
+			thdraw pendant withcolor black;
+		enddef;
+
 		def p_u_curtains(expr pos, theta, sc, al) = 
 			U:=(.3u, .8u);
 			pickup PenC;
@@ -900,6 +923,9 @@ text pt "point u:human_bone" "ossos humanos"
 
 text en "point u:mud_crack" "cracked mud"
 text pt "point u:mud_crack" "lama rachada"
+
+text en "point u:pendant" "pendant"
+text pt "point u:pendant" "pendente"
 
 text en "point u:raft_cone" "raft cone"
 text pt "point u:raft_cone" "cone"

@@ -31,6 +31,7 @@ point 615.0 480.0 u:plus_minus
 point 635.0 480.0 u:mud
 point 655.0 480.0 u:water_drip
 point 675.0 480.0 u:photo -orientation 123
+point 695.0 480.0 u:archeo_excavation
 #! or
 
 #!CODE

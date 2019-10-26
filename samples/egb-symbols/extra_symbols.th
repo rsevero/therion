@@ -577,6 +577,22 @@ layout extra_symbols
 			endfor;
 		enddef;
 
+		def p_u_helictites(expr pos,theta,sc,al) =
+			U:=(.4u,.8u);
+			pickup PenC;
+			for i=-1 upto 1:
+				if i < 0:
+					T:=identity aligned al rotated theta scaled (sc * 0.7) shifted (pos + (i * .45u, abs(i) * .15u));
+				else:
+					T:=identity aligned al rotated theta scaled (sc * 0.7) shifted (pos + (i * .3u, abs(i) * .15u));
+				fi;
+				thdraw (0,.4u)--(0,-.4u);
+				p := (-.2u,.4u)---(-.2u,.1u){down}..{dir -10}(-.1u,0.02u)---origin;
+				thdraw p;
+				thdraw p reflectedabout (origin,(0,u)) reflectedabout (origin,(u,0));
+			endfor;
+		enddef;
+
 		def p_u_raft_cone (expr pos,theta,sc,al)=
 			U:=(.3u,.4u);
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -667,7 +683,7 @@ layout extra_symbols
 				thdraw (-.15u,0) -- (.15u,0);
 			endfor;
 		enddef;
-		
+
 		def l_u_rimstonedam (expr P) =
 			cas := 0;
 			distance := arclength P;
@@ -737,6 +753,9 @@ text pt "point u:bone" "osso"
 
 text en "point u:curtains" "curtains"
 text pt "point u:curtains" "cortinas"
+
+text en "point u:helictites" "helictites"
+text pt "point u:helictites" "helictites"
 
 text en "point u:raft_cone" "raft cone"
 text pt "point u:raft_cone" "cone"

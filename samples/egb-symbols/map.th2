@@ -43,6 +43,8 @@ point 635.0 510.0 u:disc_pillar
 point 655.0 510.0 u:discs_stalactites
 point 675.0 510.0 u:discs_stalagmites
 point 695.0 510.0 u:discs_pillars
+point 715.0 510.0 helictite
+point 735.0 510.0 u:helictites
 #! or
 
 #!CODE

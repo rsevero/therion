@@ -707,6 +707,27 @@ layout extra_symbols
 			thdraw pendant;
 		enddef;
 
+		def p_u_pillar_with_curtains(expr pos, theta, sc, al) =
+			U:=(.15u,.5u);
+			T:=identity aligned al rotated theta scaled sc shifted pos;
+			pickup PenC;
+			thdraw (0,.25u)--(0,.1u){dir 180}..(-.1u,0)..{dir 0}(0,-.1u)--(0,-.25u);
+			thdraw (-.15u,-.5u)--(0,-.25u)--(.15u,-.5u);
+			thdraw (-.15u,.5u)--(0,.25u)--(.15u,.5u);
+		enddef;
+
+		def p_u_pillars_with_curtains(expr pos, theta, sc, al) =
+			U:=(.3u,u);
+			pickup PenC;
+			pickup PenC;
+			for i=-1 upto 1:
+				T:=identity aligned al rotated theta scaled (sc * 0.7) shifted (pos + (i * .3u, abs(i) * .15u));
+				thdraw (0,.25u)--(0,.1u){dir 180}..(-.1u,0)..{dir 0}(0,-.1u)--(0,-.25u);
+				thdraw (-.15u,-.5u)--(0,-.25u)--(.15u,-.5u);
+				thdraw (-.15u,.5u)--(0,.25u)--(.15u,.5u);
+			endfor;
+		enddef;
+
 		def p_u_curtains(expr pos, theta, sc, al) = 
 			U:=(.3u, .8u);
 			pickup PenC;
@@ -905,6 +926,12 @@ text pt "point u:mud_crack" "lama rachada"
 
 text en "point u:pendant" "pendant"
 text pt "point u:pendant" "pendente"
+
+text en "point u:pillar_with_curtains" "pillar with curtains"
+text pt "point u:pillar_with_curtains" "coluna com cortinas"
+
+text en "point u:pillars_with_curtains" "pillars with curtains"
+text pt "point u:pillars_with_curtains" "colunas com cortinas"
 
 text en "point u:raft_cone" "raft cone"
 text pt "point u:raft_cone" "cone"

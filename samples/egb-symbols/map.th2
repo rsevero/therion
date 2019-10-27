@@ -21,33 +21,30 @@ line border -id l7-455-492 -close on
   303.0 508.0 297.0 504.0 292.0 485.0
 endline
 
-#!CODE
-point 555.0 480.0 u:danger
-#!ENDCODE
-
+point 545.0 480.0 u:danger
 point 575.0 480.0 u:minus
-point 595.0 480.0 u:plus
-point 615.0 480.0 u:plus_minus
-point 635.0 480.0 u:mud
-point 655.0 480.0 u:water_drip
-point 675.0 480.0 u:photo -orientation 123
-point 695.0 480.0 u:archeo_excavation
-point 715.0 480.0 u:audio
-point 735.0 480.0 u:bat
-point 755.0 480.0 curtain
-point 775.0 480.0 u:bone
-point 795.0 480.0 u:curtains
-point 595.0 510.0 u:disc_stalactite
-point 615.0 510.0 u:disc_stalagmite
-point 635.0 510.0 u:disc_pillar
-point 655.0 510.0 u:discs_stalactites
-point 675.0 510.0 u:discs_stalagmites
-point 695.0 510.0 u:discs_pillars
-point 715.0 510.0 helictite
-point 735.0 510.0 u:helictites
-point 755.0 510.0 u:human_bone
-point 775.0 510.0 u:mud_crack
-point 795.0 510.0 u:pendant
+point 605.0 480.0 u:plus
+point 635.0 480.0 u:plus_minus
+point 665.0 480.0 u:mud
+point 695.0 480.0 u:water_drip
+point 725.0 480.0 u:photo -orientation 123
+point 755.0 480.0 u:archeo_excavation
+point 785.0 480.0 u:audio
+point 605.0 510.0 u:bat
+point 635.0 510.0 curtain
+point 665.0 510.0 u:bone
+point 695.0 510.0 u:curtains
+point 725.0 510.0 u:disc_stalactite
+point 755.0 510.0 u:disc_stalagmite
+point 785.0 510.0 u:disc_pillar
+point 605.0 540.0 u:discs_stalactites
+point 635.0 540.0 u:discs_stalagmites
+point 665.0 540.0 u:discs_pillars
+point 695.0 540.0 helictite
+point 725.0 540.0 u:helictites
+point 755.0 540.0 u:human_bone
+point 785.0 540.0 u:mud_crack
+point 605.0 570.0 u:pendant
 #! or
 
 #!CODE

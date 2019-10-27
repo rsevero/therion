@@ -707,6 +707,37 @@ layout extra_symbols
 			thdraw pendant;
 		enddef;
 
+		picture seed_germination_raw;
+	 	seed_germination_raw := image(
+			linecap := butt;
+			linejoin := mitered;
+			fill (294.691010,252.395004)..controls (242.964996,257.042999) and (198.710999,301.613007)..(194.434006,353.316010)
+				..controls (190.828003,389.375000) and (205.804993,427.437988)..(234.449005,449.882996)
+				--(299.785004,298.843994)..controls (305.851990,284.824005) and (313.351990,286.406006)..(317.867004,297.796997)
+				--(378.417999,450.589996)..controls (416.367004,419.933990) and (429.414001,363.664001)..(409.453003,319.289001)
+				..controls (390.699005,274.792999) and (342.437988,247.352005)..(294.691010,252.395004)
+				--cycle withcolor black;
+			fill (266.761993,439.105011)--(294.472992,470.847992)--(294.003998,522.434021)
+				..controls (253.582001,512.960999) and (208.809006,530.617004)..(185.996002,565.354980)
+				..controls (174.352005,582.090027) and (168.651993,602.362976)..(168.223007,622.632996)
+				..controls (197.210999,637.718994) and (233.113007,639.257996)..(262.226990,623.706970)
+				..controls (274.328003,617.726990) and (284.722992,608.976990)..(294.335999,599.617004)
+				--(294.742004,630.190979)..controls (294.992004,649.414001) and (319.179993,648.784973)..(319.179993,629.757996)
+				--(319.179993,574.593994)..controls (339.906006,597.054993) and (370.246002,611.851990)..(401.238007,609.000000)
+				..controls (415.863007,608.715027) and (435.062988,605.223022)..(444.414001,594.953003)
+				..controls (444.437988,544.109009) and (400.753998,499.503998)..(350.433990,495.203003)
+				..controls (334.324005,493.828003) and (319.179993,502.453003)..(319.179993,502.453003)
+				--(319.859009,469.644989)--(346.359009,438.925995)--(306.429993,346.949005)
+				--cycle withcolor black;
+		);
+		picture seed_germination;
+		seed_germination := seed_germination_raw shifted (-(llcorner seed_germination_raw)-(urcorner seed_germination_raw - llcorner seed_germination_raw)/2) scaled (2u / 3 / ((xpart urcorner seed_germination_raw) - (xpart llcorner seed_germination_raw)));
+
+		def p_u_seed_germination(expr pos, theta, sc, al) = 
+			T:=identity aligned al rotated theta scaled sc shifted pos;
+			thdraw seed_germination;
+		enddef;
+
 		def p_u_pillar_with_curtains(expr pos, theta, sc, al) =
 			U:=(.15u,.5u);
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -932,6 +963,9 @@ text pt "point u:pillar_with_curtains" "coluna com cortinas"
 
 text en "point u:pillars_with_curtains" "pillars with curtains"
 text pt "point u:pillars_with_curtains" "colunas com cortinas"
+
+text en "point u:seed_germination" "seed germination"
+text pt "point u:seed_germination" "sementes germinadas"
 
 text en "point u:raft_cone" "raft cone"
 text pt "point u:raft_cone" "cone"

@@ -792,25 +792,25 @@ layout extra_symbols
 			thdraw (-.3u,-.4u)--(0,.4u)--(.3u,-.4u);
 		enddef; 
 
-		def p_u_stalagmite_stalactite (expr pos,theta,sc,al)=
+		def p_u_stalactite_stalagmite (expr pos,theta,sc,al)=
 			U:=(.15u, .4u);
 			T:=identity aligned al rotated theta scaled sc shifted pos;
 			pickup PenC;
-			thdraw (-.15u,.4u) -- (0,.2u) -- (0,.1u);
-			thdraw (0,-.1u) -- (0,-.2u) -- (-.15u,-.4u);
-			thdraw (0,-.2u) -- (.15u,-.4u);
-			thdraw (0,.2u) -- (.15u,.4u);
+			thdraw (-.15u,.4u) -- (0,.2u) -- (.15u,.4u);
+			thdraw (.15u,-.4u) -- (0,-.2u) -- (-.15u,-.4u);
+			thdraw (0,-.2u) -- (0,-.05u);
+			thdraw (0,.2u) -- (0,.05u);
 		enddef;
 
-		def p_u_stalagmites_stalactites (expr pos,theta,sc,al) =
+		def p_u_stalactites_stalagmites (expr pos,theta,sc,al) =
 			U:=(.3u, .8u);
 			pickup PenC;
 			for i=-1 upto 1:
 				T:=identity aligned al rotated theta scaled (sc * 0.7) shifted (pos + (i * .3u, abs(i) * .15u));
-				thdraw (-.15u,.4u) -- (0,.2u) -- (0,.1u);
-				thdraw (0,-.1u) -- (0,-.2u) -- (-.15u,-.4u);
-				thdraw (0,-.2u) -- (.15u,-.4u);
-				thdraw (0,.2u) -- (.15u,.4u);
+				thdraw (-.15u,.4u) -- (0,.2u) -- (.15u,.4u);
+				thdraw (.15u,-.4u) -- (0,-.2u) -- (-.15u,-.4u);
+				thdraw (0,-.2u) -- (0,-.05u);
+				thdraw (0,.2u) -- (0,.05u);
 			endfor;
 		enddef;
 
@@ -970,11 +970,11 @@ text pt "point u:seed_germination" "sementes germinadas"
 text en "point u:raft_cone" "raft cone"
 text pt "point u:raft_cone" "cone"
 
-text en "point u:stalagmite_stalactite" "stalagmite and stalactite"
-text pt "point u:stalagmite_stalactite" "estalagmite e estalactite"
+text en "point u:stalactite_stalagmite" "stalactite and stalagmite"
+text pt "point u:stalactite_stalagmite" "estalagtite e estalagmite"
 
-text en "point u:stalagmites_stalactites" "stalagmites and stalactites"
-text pt "point u:stalagmites_stalactites" "estalagmites e estalactites"
+text en "point u:stalactites_stalagmites" "stalactites and stalagmites"
+text pt "point u:stalactites_stalagmites" "estalagtites e estalagmites"
 
 text en "point u:disc_stalactite" "disc at stalactite"
 text pt "point u:disc_stalactite" "disco em estalactite"

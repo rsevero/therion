@@ -175,7 +175,7 @@ layout extra_points
 				--cycle withcolor black;
 		);
 		picture minus;
-		minus := minus_raw shifted (-(llcorner minus_raw)-(urcorner minus_raw - llcorner minus_raw)/2) scaled (2u / 3 / ((xpart urcorner minus_raw) - (xpart llcorner minus_raw)));
+		minus := minus_raw shifted (-(llcorner minus_raw)-(urcorner minus_raw - llcorner minus_raw)/2) scaled (u / ((xpart urcorner minus_raw) - (xpart llcorner minus_raw)));
 
 		def p_u_minus(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -203,7 +203,7 @@ layout extra_points
 				--cycle withcolor black;
 		);
 		picture plus;
-		plus := plus_raw shifted (-(llcorner plus_raw)-(urcorner plus_raw - llcorner plus_raw)/2) scaled (2u / 3 / ((xpart urcorner plus_raw) - (xpart llcorner plus_raw)));
+		plus := plus_raw shifted (-(llcorner plus_raw)-(urcorner plus_raw - llcorner plus_raw)/2) scaled (u / ((xpart urcorner plus_raw) - (xpart llcorner plus_raw)));
 
 		def p_u_plus(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -234,7 +234,7 @@ layout extra_points
 				--cycle withcolor black;
 		);
 		picture plus_minus;
-		plus_minus := plus_minus_raw shifted (-(llcorner plus_minus_raw)-(urcorner plus_minus_raw - llcorner plus_minus_raw)/2) scaled (2u / 3 / ((xpart urcorner plus_minus_raw) - (xpart llcorner plus_minus_raw)));
+		plus_minus := plus_minus_raw shifted (-(llcorner plus_minus_raw)-(urcorner plus_minus_raw - llcorner plus_minus_raw)/2) scaled (u / ((xpart urcorner plus_minus_raw) - (xpart llcorner plus_minus_raw)));
 
 		def p_u_plus_minus(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -677,7 +677,7 @@ layout extra_points
 				--cycle withcolor black;
 		);
 		picture mud_crack;
-		mud_crack := mud_crack_raw shifted (-(llcorner mud_crack_raw)-(urcorner mud_crack_raw - llcorner mud_crack_raw)/2) scaled (2u / 3 / ((xpart urcorner mud_crack_raw) - (xpart llcorner mud_crack_raw)));
+		mud_crack := mud_crack_raw shifted (-(llcorner mud_crack_raw)-(urcorner mud_crack_raw - llcorner mud_crack_raw)/2) scaled (u / ((xpart urcorner mud_crack_raw) - (xpart llcorner mud_crack_raw)));
 
 		def p_u_mud_crack(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -700,7 +700,7 @@ layout extra_points
 			draw (221.223007,549.379028)--(221.223007,510.742004) withcolor black;
 		);
 		picture pendant;
-		pendant := pendant_raw shifted (-(llcorner pendant_raw)-(urcorner pendant_raw - llcorner pendant_raw)/2) scaled (2u / 3 / ((xpart urcorner pendant_raw) - (xpart llcorner pendant_raw)));
+		pendant := pendant_raw shifted (-(llcorner pendant_raw)-(urcorner pendant_raw - llcorner pendant_raw)/2) scaled (u / ((xpart urcorner pendant_raw) - (xpart llcorner pendant_raw)));
 
 		def p_u_pendant(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -781,7 +781,7 @@ layout extra_points
 				--cycle;
 		);
 		picture tree_trunk;
-		tree_trunk := tree_trunk_raw shifted (-(llcorner tree_trunk_raw)-(urcorner tree_trunk_raw - llcorner tree_trunk_raw)/2) scaled (2u / 3 / ((xpart urcorner tree_trunk_raw) - (xpart llcorner tree_trunk_raw)));
+		tree_trunk := tree_trunk_raw shifted (-(llcorner tree_trunk_raw)-(urcorner tree_trunk_raw - llcorner tree_trunk_raw)/2) scaled (u / ((xpart urcorner tree_trunk_raw) - (xpart llcorner tree_trunk_raw)));
 
 		def p_u_tree_trunk(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;

@@ -2,6 +2,24 @@ layout extra_points
 	# Códigos metapost para definição de símbolos extra
 	code metapost
 
+		picture bridge_raw;
+	 	bridge_raw := image(
+			pickup pencircle scaled 25bp;
+			linecap := butt;
+			linejoin := mitered;
+			draw (580.965027,551.184021)--(522.101990,444.898010)--(126.344002,444.898010)
+				--(67.480499,551.184021);
+			draw (580.965027,239.464996)--(522.101990,345.750000)--(126.344002,345.750000)
+				--(67.480499,239.464996);
+		);
+		picture bridge;
+		bridge := bridge_raw shifted (-(llcorner bridge_raw)-(urcorner bridge_raw - llcorner bridge_raw)/2) scaled (u / ((xpart urcorner bridge_raw) - (xpart llcorner bridge_raw)));
+
+		def p_u_bridge(expr pos, theta, sc, al) = 
+			T:=identity aligned al rotated theta scaled sc shifted pos;
+			thdraw bridge;
+		enddef;
+
 		picture altar_raw;
 	 	altar_raw := image(
 			linecap := butt;
@@ -1010,6 +1028,9 @@ layout extra_points
 	endcode
 	
 endlayout
+
+text en "point u:bridge" "bridge"
+text pt "point u:bridge" "ponte"
 
 text en "point u:altar" "altar"
 text pt "point u:altar" "altar"

@@ -54,6 +54,7 @@ point 785.0 570.0 u:tree_trunk
 point 605.0 600.0 u:volcano
 point 635.0 600.0 u:altar
 point 665.0 600.0 u:bridge
+point 695.0 600.0 u:eletric_light
 #! or
 
 #!CODE

@@ -785,6 +785,23 @@ layout extra_points
 			thdraw tree_trunk;
 		enddef;
 
+		picture volcano_raw;
+	 	volcano_raw := image(
+			pickup pencircle scaled 21.160601bp;
+			linecap := butt;
+			linejoin := beveled;
+			draw (36.671902,222.897995)--(169.684006,567.409973)..controls (177.815994,510.679993) and (212.089996,485.109009)..(265.714996,485.109009)
+				..controls (319.335999,485.109009) and (353.609009,510.679993)..(361.742004,567.409973)
+				--(494.753998,222.897995);
+		);
+		picture volcano;
+		volcano := volcano_raw shifted (-(llcorner volcano_raw)-(urcorner volcano_raw - llcorner volcano_raw)/2) scaled (u / ((xpart urcorner volcano_raw) - (xpart llcorner volcano_raw)));
+
+		def p_u_volcano(expr pos, theta, sc, al) = 
+			T:=identity aligned al rotated theta scaled sc shifted pos;
+			thdraw volcano;
+		enddef;
+
 		def p_u_pillar_with_curtains(expr pos, theta, sc, al) =
 			U:=(.15u,.5u);
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -1016,6 +1033,9 @@ text pt "point u:seed_germination" "sementes germinadas"
 
 text en "point u:tree_trunk" "tree trunk"
 text pt "point u:tree_trunk" "tronco de árvore"
+
+text en "point u:volcano" "volcano"
+text pt "point u:volcano" "vulcão"
 
 text en "point u:raft_cone" "raft cone"
 text pt "point u:raft_cone" "cone"

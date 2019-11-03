@@ -51,6 +51,7 @@ point 695.0 570.0 u:seed_germination
 point 725.0 570.0 u:stalactite_stalagmite
 point 755.0 570.0 u:stalactites_stalagmites
 point 785.0 570.0 u:tree_trunk
+point 605.0 600.0 u:volcano
 #! or
 
 #!CODE

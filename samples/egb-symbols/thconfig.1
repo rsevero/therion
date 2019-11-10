@@ -1,0 +1,20 @@
+encoding  utf-8
+source map.th2
+
+layout m
+
+code tex-map
+\legendcontent={%
+  \hsize=\legendwidth
+  \color[0 0 0]\the\legendtextcolor 
+  \formattedlegend
+  \color[0 0 0]
+}
+
+endlayout
+
+language pt
+
+input extra_points.th
+
+export map -o map2.pdf -layout m -layout extra_points -layout-map-header 0 0 nw -layout-legend on

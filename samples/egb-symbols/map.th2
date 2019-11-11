@@ -56,6 +56,7 @@ point 635.0 600.0 u:altar
 point 665.0 600.0 u:bridge
 point 695.0 600.0 u:eletric_light
 point 725.0 600.0 u:ex_voto
+point 755.0 600.0 u:gate
 #! or
 
 #!CODE

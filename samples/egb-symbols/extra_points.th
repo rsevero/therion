@@ -65,7 +65,7 @@ layout extra_points
 				--(367.359009,342.710999)--(399.902008,337.304993)--cycle withcolor white;
 		);
 		picture gate;
-		gate := gate_raw shifted (-(llcorner gate_raw)-(urcorner gate_raw - llcorner gate_raw)/2) scaled (u / ((xpart urcorner gate_raw) - (xpart llcorner gate_raw)));
+		gate := gate_raw shifted (-(llcorner gate_raw)-(urcorner gate_raw - llcorner gate_raw)/2) scaled (u / max((xpart urcorner gate_raw) - (xpart llcorner gate_raw), (ypart urcorner gate_raw) - (ypart llcorner gate_raw)));
 
 		def p_u_gate(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -145,7 +145,7 @@ layout extra_points
 			    --cycle;
 		);
 		picture ex_voto;
-		ex_voto := ex_voto_raw shifted (-(llcorner ex_voto_raw)-(urcorner ex_voto_raw - llcorner ex_voto_raw)/2) scaled (u / ((xpart urcorner ex_voto_raw) - (xpart llcorner ex_voto_raw)));
+		ex_voto := ex_voto_raw shifted (-(llcorner ex_voto_raw)-(urcorner ex_voto_raw - llcorner ex_voto_raw)/2) scaled (u / max((xpart urcorner ex_voto_raw) - (xpart llcorner ex_voto_raw), (ypart urcorner ex_voto_raw) - (ypart llcorner ex_voto_raw)));
 
 		def p_u_ex_voto(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -207,7 +207,7 @@ layout extra_points
 				--cycle;
 		);
 		picture eletric_light;
-		eletric_light := eletric_light_raw shifted (-(llcorner eletric_light_raw)-(urcorner eletric_light_raw - llcorner eletric_light_raw)/2) scaled (u / ((xpart urcorner eletric_light_raw) - (xpart llcorner eletric_light_raw)));
+		eletric_light := eletric_light_raw shifted (-(llcorner eletric_light_raw)-(urcorner eletric_light_raw - llcorner eletric_light_raw)/2) scaled (u / max((xpart urcorner eletric_light_raw) - (xpart llcorner eletric_light_raw), (ypart urcorner eletric_light_raw) - (ypart llcorner eletric_light_raw)));
 
 		def p_u_eletric_light(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -225,7 +225,7 @@ layout extra_points
 				--(67.480499,239.464996);
 		);
 		picture bridge;
-		bridge := bridge_raw shifted (-(llcorner bridge_raw)-(urcorner bridge_raw - llcorner bridge_raw)/2) scaled (u / ((xpart urcorner bridge_raw) - (xpart llcorner bridge_raw)));
+		bridge := bridge_raw shifted (-(llcorner bridge_raw)-(urcorner bridge_raw - llcorner bridge_raw)/2) scaled (u / max((xpart urcorner bridge_raw) - (xpart llcorner bridge_raw), (ypart urcorner bridge_raw) - (ypart llcorner bridge_raw)));
 
 		def p_u_bridge(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -262,7 +262,7 @@ layout extra_points
 				--cycle;
 		);
 		picture altar;
-		altar := altar_raw shifted (-(llcorner altar_raw)-(urcorner altar_raw - llcorner altar_raw)/2) scaled (u / ((xpart urcorner altar_raw) - (xpart llcorner altar_raw)));
+		altar := altar_raw shifted (-(llcorner altar_raw)-(urcorner altar_raw - llcorner altar_raw)/2) scaled (u / max((xpart urcorner altar_raw) - (xpart llcorner altar_raw), (ypart urcorner altar_raw) - (ypart llcorner altar_raw)));
 
 		def p_u_altar(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -368,7 +368,7 @@ layout extra_points
 				--cycle withcolor black;
 		);
 		picture human_bone;
-		human_bone := human_bone_raw shifted (-(llcorner human_bone_raw)-(urcorner human_bone_raw - llcorner human_bone_raw)/2) scaled (u / ((xpart urcorner human_bone_raw) - (xpart llcorner human_bone_raw)));
+		human_bone := human_bone_raw shifted (-(llcorner human_bone_raw)-(urcorner human_bone_raw - llcorner human_bone_raw)/2) scaled (u / max((xpart urcorner human_bone_raw) - (xpart llcorner human_bone_raw), (ypart urcorner human_bone_raw) - (ypart llcorner human_bone_raw)));
 
 		def p_u_human_bone(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -403,7 +403,7 @@ layout extra_points
 				--cycle withcolor white;
 		);
 		picture danger;
-		danger := danger_raw shifted (-(llcorner danger_raw)-(urcorner danger_raw - llcorner danger_raw)/2) scaled (u / ((xpart urcorner danger_raw) - (xpart llcorner danger_raw)));
+		danger := danger_raw shifted (-(llcorner danger_raw)-(urcorner danger_raw - llcorner danger_raw)/2) scaled (u / max((xpart urcorner danger_raw) - (xpart llcorner danger_raw), (ypart urcorner danger_raw) - (ypart llcorner danger_raw)));
 
 		def p_u_danger(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -442,7 +442,7 @@ layout extra_points
 				--cycle withcolor black;
 		);
 		picture minus;
-		minus := minus_raw shifted (-(llcorner minus_raw)-(urcorner minus_raw - llcorner minus_raw)/2) scaled (u / ((xpart urcorner minus_raw) - (xpart llcorner minus_raw)));
+		minus := minus_raw shifted (-(llcorner minus_raw)-(urcorner minus_raw - llcorner minus_raw)/2) scaled (u / max((xpart urcorner minus_raw) - (xpart llcorner minus_raw), (ypart urcorner minus_raw) - (ypart llcorner minus_raw)));
 
 		def p_u_minus(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -470,7 +470,7 @@ layout extra_points
 				--cycle withcolor black;
 		);
 		picture plus;
-		plus := plus_raw shifted (-(llcorner plus_raw)-(urcorner plus_raw - llcorner plus_raw)/2) scaled (u / ((xpart urcorner plus_raw) - (xpart llcorner plus_raw)));
+		plus := plus_raw shifted (-(llcorner plus_raw)-(urcorner plus_raw - llcorner plus_raw)/2) scaled (u / max((xpart urcorner plus_raw) - (xpart llcorner plus_raw), (ypart urcorner plus_raw) - (ypart llcorner plus_raw)));
 
 		def p_u_plus(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -501,7 +501,7 @@ layout extra_points
 				--cycle withcolor black;
 		);
 		picture plus_minus;
-		plus_minus := plus_minus_raw shifted (-(llcorner plus_minus_raw)-(urcorner plus_minus_raw - llcorner plus_minus_raw)/2) scaled (u / ((xpart urcorner plus_minus_raw) - (xpart llcorner plus_minus_raw)));
+		plus_minus := plus_minus_raw shifted (-(llcorner plus_minus_raw)-(urcorner plus_minus_raw - llcorner plus_minus_raw)/2) scaled (u / max((xpart urcorner plus_minus_raw) - (xpart llcorner plus_minus_raw), (ypart urcorner plus_minus_raw) - (ypart llcorner plus_minus_raw)));
 
 		def p_u_plus_minus(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -541,7 +541,7 @@ layout extra_points
 			    --cycle withcolor (0.53, 0.24, 0.02);
 		);
 		picture mud;
-		mud := mud_raw shifted (-(llcorner mud_raw)-(urcorner mud_raw - llcorner mud_raw)/2) scaled (u / ((xpart urcorner mud_raw) - (xpart llcorner mud_raw)));
+		mud := mud_raw shifted (-(llcorner mud_raw)-(urcorner mud_raw - llcorner mud_raw)/2) scaled (u / max((xpart urcorner mud_raw) - (xpart llcorner mud_raw), (ypart urcorner mud_raw) - (ypart llcorner mud_raw)));
 
 		def p_u_mud(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -623,7 +623,7 @@ layout extra_points
 				--cycle withcolor black;
 		);
 		picture water_drip;
-		water_drip := water_drip_raw shifted (-(llcorner water_drip_raw)-(urcorner water_drip_raw - llcorner water_drip_raw)/2) scaled (u / ((xpart urcorner water_drip_raw) - (xpart llcorner water_drip_raw)));
+		water_drip := water_drip_raw shifted (-(llcorner water_drip_raw)-(urcorner water_drip_raw - llcorner water_drip_raw)/2) scaled (u / max((xpart urcorner water_drip_raw) - (xpart llcorner water_drip_raw), (ypart urcorner water_drip_raw) - (ypart llcorner water_drip_raw)));
 
 		def p_u_water_drip(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -658,7 +658,7 @@ layout extra_points
 			draw (320.472992,500.894989)--(406.082001,620.598022) withcolor black;
 		);
 		picture photo;
-		photo := photo_raw shifted (-(llcorner photo_raw)-(urcorner photo_raw - llcorner photo_raw)/2) scaled (u / ((xpart urcorner photo_raw) - (xpart llcorner photo_raw)));
+		photo := photo_raw shifted (-(llcorner photo_raw)-(urcorner photo_raw - llcorner photo_raw)/2) scaled (u / max((xpart urcorner photo_raw) - (xpart llcorner photo_raw), (ypart urcorner photo_raw) - (ypart llcorner photo_raw)));
 
 		def p_u_photo(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -709,7 +709,7 @@ layout extra_points
 				--cycle withcolor black;
 		);
 		picture archeo_excavation;
-		archeo_excavation := archeo_excavation_raw shifted (-(llcorner archeo_excavation_raw)-(urcorner archeo_excavation_raw - llcorner archeo_excavation_raw)/2) scaled (u / ((xpart urcorner archeo_excavation_raw) - (xpart llcorner archeo_excavation_raw)));
+		archeo_excavation := archeo_excavation_raw shifted (-(llcorner archeo_excavation_raw)-(urcorner archeo_excavation_raw - llcorner archeo_excavation_raw)/2) scaled (u / max((xpart urcorner archeo_excavation_raw) - (xpart llcorner archeo_excavation_raw), (ypart urcorner archeo_excavation_raw) - (ypart llcorner archeo_excavation_raw)));
 
 		def p_u_archeo_excavation(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -753,7 +753,7 @@ layout extra_points
 				--cycle withcolor black;
 		);
 		picture audio;
-		audio := audio_raw shifted (-(llcorner audio_raw)-(urcorner audio_raw - llcorner audio_raw)/2) scaled (u / ((xpart urcorner audio_raw) - (xpart llcorner audio_raw)));
+		audio := audio_raw shifted (-(llcorner audio_raw)-(urcorner audio_raw - llcorner audio_raw)/2) scaled (u / max((xpart urcorner audio_raw) - (xpart llcorner audio_raw), (ypart urcorner audio_raw) - (ypart llcorner audio_raw)));
 
 		def p_u_audio(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -788,7 +788,7 @@ layout extra_points
 				--cycle withcolor black;
 		);
 		picture bat;
-		bat := bat_raw shifted (-(llcorner bat_raw)-(urcorner bat_raw - llcorner bat_raw)/2) scaled (u / ((xpart urcorner bat_raw) - (xpart llcorner bat_raw)));
+		bat := bat_raw shifted (-(llcorner bat_raw)-(urcorner bat_raw - llcorner bat_raw)/2) scaled (u / max((xpart urcorner bat_raw) - (xpart llcorner bat_raw), (ypart urcorner bat_raw) - (ypart llcorner bat_raw)));
 
 		def p_u_bat(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -839,7 +839,7 @@ layout extra_points
 				--cycle withcolor black;
 		);
 		picture bone;
-		bone := bone_raw shifted (-(llcorner bone_raw)-(urcorner bone_raw - llcorner bone_raw)/2) scaled (u / ((xpart urcorner bone_raw) - (xpart llcorner bone_raw)));
+		bone := bone_raw shifted (-(llcorner bone_raw)-(urcorner bone_raw - llcorner bone_raw)/2) scaled (u / max((xpart urcorner bone_raw) - (xpart llcorner bone_raw), (ypart urcorner bone_raw) - (ypart llcorner bone_raw)));
 
 		def p_u_bone(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -944,7 +944,7 @@ layout extra_points
 				--cycle withcolor black;
 		);
 		picture mud_crack;
-		mud_crack := mud_crack_raw shifted (-(llcorner mud_crack_raw)-(urcorner mud_crack_raw - llcorner mud_crack_raw)/2) scaled (u / ((xpart urcorner mud_crack_raw) - (xpart llcorner mud_crack_raw)));
+		mud_crack := mud_crack_raw shifted (-(llcorner mud_crack_raw)-(urcorner mud_crack_raw - llcorner mud_crack_raw)/2) scaled (u / max((xpart urcorner mud_crack_raw) - (xpart llcorner mud_crack_raw), (ypart urcorner mud_crack_raw) - (ypart llcorner mud_crack_raw)));
 
 		def p_u_mud_crack(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -964,7 +964,7 @@ layout extra_points
 				..controls (156.875000,621.965027) and (107.987999,639.585999)..(102.460999,639.585999);
 		);
 		picture pendant;
-		pendant := pendant_raw shifted (-(llcorner pendant_raw)-(urcorner pendant_raw - llcorner pendant_raw)/2) scaled (u / ((xpart urcorner pendant_raw) - (xpart llcorner pendant_raw)));
+		pendant := pendant_raw shifted (-(llcorner pendant_raw)-(urcorner pendant_raw - llcorner pendant_raw)/2) scaled (u / max((xpart urcorner pendant_raw) - (xpart llcorner pendant_raw), (ypart urcorner pendant_raw) - (ypart llcorner pendant_raw)));
 
 		def p_u_pendant(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -998,7 +998,7 @@ layout extra_points
 			draw (101.250000,276.343994)..controls (177.468994,243.992004) and (396.476990,296.585999)..(502.667999,269.492004);
 		);
 		picture seed_germination;
-		seed_germination := seed_germination_raw shifted (-(llcorner seed_germination_raw)-(urcorner seed_germination_raw - llcorner seed_germination_raw)/2) scaled (u / ((xpart urcorner seed_germination_raw) - (xpart llcorner seed_germination_raw)));
+		seed_germination := seed_germination_raw shifted (-(llcorner seed_germination_raw)-(urcorner seed_germination_raw - llcorner seed_germination_raw)/2) scaled (u / max((xpart urcorner seed_germination_raw) - (xpart llcorner seed_germination_raw), (ypart urcorner seed_germination_raw) - (ypart llcorner seed_germination_raw)));
 
 		def p_u_seed_germination(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -1045,7 +1045,7 @@ layout extra_points
 				--cycle;
 		);
 		picture tree_trunk;
-		tree_trunk := tree_trunk_raw shifted (-(llcorner tree_trunk_raw)-(urcorner tree_trunk_raw - llcorner tree_trunk_raw)/2) scaled (u / ((xpart urcorner tree_trunk_raw) - (xpart llcorner tree_trunk_raw)));
+		tree_trunk := tree_trunk_raw shifted (-(llcorner tree_trunk_raw)-(urcorner tree_trunk_raw - llcorner tree_trunk_raw)/2) scaled (u / max((xpart urcorner tree_trunk_raw) - (xpart llcorner tree_trunk_raw), (ypart urcorner tree_trunk_raw) - (ypart llcorner tree_trunk_raw)));
 
 		def p_u_tree_trunk(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
@@ -1062,7 +1062,7 @@ layout extra_points
 				--(494.753998,222.897995);
 		);
 		picture volcano;
-		volcano := volcano_raw shifted (-(llcorner volcano_raw)-(urcorner volcano_raw - llcorner volcano_raw)/2) scaled (u / ((xpart urcorner volcano_raw) - (xpart llcorner volcano_raw)));
+		volcano := volcano_raw shifted (-(llcorner volcano_raw)-(urcorner volcano_raw - llcorner volcano_raw)/2) scaled (u / max((xpart urcorner volcano_raw) - (xpart llcorner volcano_raw), (ypart urcorner volcano_raw) - (ypart llcorner volcano_raw)));
 
 		def p_u_volcano(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;

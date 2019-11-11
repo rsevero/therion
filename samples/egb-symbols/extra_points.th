@@ -2,6 +2,26 @@ layout extra_points
 	# Códigos metapost para definição de símbolos extra
 	code metapost
 
+		picture nameplate_raw;
+	 	nameplate_raw := image(
+	 		pickup pencircle scaled 24bp;
+			linecap := butt;
+			linejoin := mitered;
+			draw (77.027298,563.448975)--(505.574005,563.448975)--(505.574005,340.082001)
+				--(77.027298,340.082001)--cycle;
+			pickup pencircle scaled 10bp;
+			draw (208.195007,496.167999)--(422.667999,496.167999);
+			draw (117.796997,450.808990)--(358.480011,450.808990);
+			draw (264.453003,401.781006)--(470.472992,401.781006);
+		);
+		picture nameplate;
+		nameplate := nameplate_raw shifted (-(llcorner nameplate_raw)-(urcorner nameplate_raw - llcorner nameplate_raw)/2) scaled (u / max((xpart urcorner nameplate_raw) - (xpart llcorner nameplate_raw), (ypart urcorner nameplate_raw) - (ypart llcorner nameplate_raw)));
+
+		def p_u_nameplate(expr pos, theta, sc, al) = 
+			T:=identity aligned al rotated theta scaled sc shifted pos;
+			thdraw nameplate;
+		enddef;
+
 		picture masonry_raw;
 	 	masonry_raw := image(
 			linecap := butt;
@@ -1267,6 +1287,9 @@ layout extra_points
 	endcode
 	
 endlayout
+
+text en "point u:nameplate" "nameplate"
+text pt "point u:nameplate" "placa de identificação"
 
 text en "point u:masonry" "masonry"
 text pt "point u:masonry" "alvenaria"

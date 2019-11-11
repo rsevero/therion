@@ -59,6 +59,7 @@ point 725.0 600.0 u:ex_voto
 point 755.0 600.0 u:gate
 point 785.0 600.0 u:ladder
 point 605.0 630.0 u:masonry
+point 635.0 630.0 u:nameplate
 #! or
 
 #!CODE

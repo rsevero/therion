@@ -61,6 +61,11 @@ point 785.0 600.0 u:ladder
 point 605.0 630.0 u:masonry
 point 635.0 630.0 u:nameplate
 point 665.0 630.0 u:stair
+point 695.0 630.0 u:walkway
+point 725.0 630.0 u:walkway_metalic
+point 755.0 630.0 u:walkway_soil
+point 785.0 630.0 u:walkway_stone
+point 605.0 660.0 u:walkway_wood
 #! or
 
 #!CODE

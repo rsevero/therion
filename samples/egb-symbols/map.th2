@@ -53,14 +53,14 @@ point 755.0 570.0 u:stalactites_stalagmites
 point 785.0 570.0 u:tree_trunk
 point 605.0 600.0 u:volcano
 point 635.0 600.0 u:altar
-point 665.0 600.0 u:bridge
+#point 665.0 600.0 u:bridge
 point 695.0 600.0 u:eletric_light
 point 725.0 600.0 u:ex_voto
 point 755.0 600.0 u:gate
-point 785.0 600.0 u:ladder
+#point 785.0 600.0 u:ladder
 point 605.0 630.0 u:masonry
 point 635.0 630.0 u:nameplate
-point 665.0 630.0 u:stair
+#point 665.0 630.0 u:stair
 point 695.0 630.0 u:walkway
 point 725.0 630.0 u:walkway_metalic
 point 755.0 630.0 u:walkway_soil

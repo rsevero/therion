@@ -102,6 +102,16 @@ line u:abyssentrance
   smooth off
 endline
 
+line u:lowceiling
+  300.0 389.0
+  345.0 411.0 339.0 433.0 387.0 452.0
+endline
+
+line u:pitchimney
+  294.0 408.0
+  354.0 434.0 334.0 450.0 383.0 464.0
+endline
+
 line u:dripline
   415.0 458.0
   463.59 470.79 481.0 435.0 523.0 439.0

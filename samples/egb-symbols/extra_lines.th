@@ -7,9 +7,9 @@ layout extra_lines
 			T := identity;
 			cursor := 0;
 			totalLength := arclength P;
-			elementSize := adjust_step(totalLength, 0.5); % symbol length nudged to be multiple of path length
-			myTick := (0,0.2u) -- (0,-0.2u);
-			myT := (0,0) -- (0,-0.2u);
+			elementSize := adjust_step(totalLength, 0.5u); % symbol length nudged to be multiple of path length
+			myTick := (0,0.1u) -- (0,-0.1u);
+			myT := (0,0) -- (0,-0.1u);
 			pickup PenD;
 			forever:
 				t1 := arctime (cursor + elementSize * 1/8) of P;
@@ -31,8 +31,8 @@ layout extra_lines
 			T := identity;
 			cursor := 0;
 			totalLength := arclength P;
-			elementSize := adjust_step(totalLength, 0.5); % symbol length nudged to be multiple of path length
-			myTick := (0,0.2u) -- (0,-0.2u);
+			elementSize := adjust_step(totalLength, 0.5u); % symbol length nudged to be multiple of path length
+			myTick := (0,0.1u) -- (0,-0.1u);
 			pickup PenD;
 			forever:
 				t1 := arctime (cursor + elementSize * 1/8) of P;
@@ -64,9 +64,9 @@ layout extra_lines
 			pickup PenC;
 			distance := 0.2u;
 			forever:
-				t0 := arctime (cursor) of P;
-				t1 := arctime (cursor + elementSize * 2/4) of P;
-				t2 := arctime (cursor + elementSize * 3/4) of P;
+				t0 := arctime (cursor + elementSize * 1/8) of P;
+				t1 := arctime (cursor + elementSize * 5/8) of P;
+				t2 := arctime (cursor + elementSize * 7/8) of P;
 
 				Ppb := (point t0 of P);
 				Pdb := unitvector(thdir(P,t0));
@@ -93,10 +93,10 @@ layout extra_lines
 			elementSize := adjust_step(totalLength, u); % symbol length nudged to be multiple of path length
 			pickup PenC;
 			forever:
-				t0 := arctime (cursor) of P;
-				t1 := arctime (cursor + elementSize * 7/22) of P;
-				t2 := arctime (cursor + elementSize * 13/22) of P;
-				t3 := arctime (cursor + elementSize * 16/22) of P;
+				t0 := arctime (cursor + elementSize * 3/22) of P;
+				t1 := arctime (cursor + elementSize * 10/22) of P;
+				t2 := arctime (cursor + elementSize * 16/22) of P;
+				t3 := arctime (cursor + elementSize * 19/22) of P;
 
 				thdraw (subpath (t0,t1) of P);
 				thdraw (subpath (t2,t3) of P);

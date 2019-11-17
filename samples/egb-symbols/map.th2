@@ -68,7 +68,7 @@ point 785.0 630.0 u:walkway_stone
 point 605.0 660.0 u:walkway_wood
 #! or
 
-line u:fault
+line u:joint
   524.0 458.0
   480.0 447.0 483.0 501.0 407.0 472.0
 endline

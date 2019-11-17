@@ -12,11 +12,11 @@ layout extra_lines
 			myT := (0,0) -- (0,-0.2u);
 			pickup PenD;
 			forever:
-				t1 := arctime (cursor + elementSize*1/8) of P;
-				t2 := arctime (cursor + elementSize*2/8) of P;
-				t3 := arctime (cursor + elementSize*4/8) of P;
-				t4 := arctime (cursor + elementSize*6/8) of P;
-				t5 := arctime (cursor + elementSize*7/8) of P;
+				t1 := arctime (cursor + elementSize * 1/8) of P;
+				t2 := arctime (cursor + elementSize * 2/8) of P;
+				t3 := arctime (cursor + elementSize * 4/8) of P;
+				t4 := arctime (cursor + elementSize * 6/8) of P;
+				t5 := arctime (cursor + elementSize * 7/8) of P;
 				thdraw myTick rotated angle(thdir(P,t1)) shifted (point t1 of P);
 				thdraw (subpath (t2,t4) of P);
 				thdraw myT rotated angle(thdir(P,t3)) shifted (point t3 of P);
@@ -35,11 +35,11 @@ layout extra_lines
 			myTick := (0,0.2u) -- (0,-0.2u);
 			pickup PenD;
 			forever:
-				t1 := arctime (cursor + elementSize*1/8) of P;
-				t2 := arctime (cursor + elementSize*2/8) of P;
-				t3 := arctime (cursor + elementSize*4/8) of P;
-				t4 := arctime (cursor + elementSize*6/8) of P;
-				t5 := arctime (cursor + elementSize*7/8) of P;
+				t1 := arctime (cursor + elementSize * 1/8) of P;
+				t2 := arctime (cursor + elementSize * 2/8) of P;
+				t3 := arctime (cursor + elementSize * 4/8) of P;
+				t4 := arctime (cursor + elementSize * 6/8) of P;
+				t5 := arctime (cursor + elementSize * 7/8) of P;
 				thdraw myTick rotated angle(thdir(P,t1)) shifted (point t1 of P);
 				thdraw (subpath (t2,t4) of P);
 				thdraw myTick rotated angle(thdir(P,t5)) shifted (point t5 of P);
@@ -65,8 +65,8 @@ layout extra_lines
 			distance := 0.2u;
 			forever:
 				t0 := arctime (cursor) of P;
-				t1 := arctime (cursor + elementSize*2/4) of P;
-				t2 := arctime (cursor + elementSize*3/4) of P;
+				t1 := arctime (cursor + elementSize * 2/4) of P;
+				t2 := arctime (cursor + elementSize * 3/4) of P;
 
 				Ppb := (point t0 of P);
 				Pdb := unitvector(thdir(P,t0));
@@ -85,9 +85,33 @@ layout extra_lines
 			endfor;
 		enddef;
 
+		def l_u_joint(expr P) =
+			T := identity;
+
+			cursor := 0;
+			totalLength := arclength P;
+			elementSize := adjust_step(totalLength, u); % symbol length nudged to be multiple of path length
+			pickup PenC;
+			forever:
+				t0 := arctime (cursor) of P;
+				t1 := arctime (cursor + elementSize * 7/22) of P;
+				t2 := arctime (cursor + elementSize * 13/22) of P;
+				t3 := arctime (cursor + elementSize * 16/22) of P;
+
+				thdraw (subpath (t0,t1) of P);
+				thdraw (subpath (t2,t3) of P);
+
+				cursor := cursor + elementSize;
+				exitif cursor > totalLength + (elementSize / 3); % for rounding errors
+			endfor;
+		enddef;
+
 	endcode
 	
 endlayout
+
+text en "line u:joint" "joint"
+text pt "line u:joint" "fratura"
 
 text en "line u:fault" "fault"
 text pt "line u:fault" "falha"

@@ -52,8 +52,8 @@ layout extra_lines
 				p1 := point t1 of P;
 				p2 := point t2 of P;
 
-				d1 := dir(angle(direction t1 of P)) scaled distance;
-				d2 := dir(angle(direction t2 of P)) scaled distance;
+				d1 := unitvector(thdir(P,t1)) * distance;
+				d2 := unitvector(thdir(P,t2)) * distance;
 
 				tick1 := p1 + (d1 rotated 90);
 				tick2 := p2 + (d2 rotated 90);
@@ -88,7 +88,7 @@ layout extra_lines
 
 				thdraw myTick rotated angle(thdir(P,t1)) shifted (point t1 of P);
 				thdraw (subpath (t2,t4) of P);
-				thdraw myT rotated angle(thdir(P,t3)) shifted (point t3 of P);
+				thdraw myT rotated (180+angle(thdir(P,t3))) shifted (point t3 of P);
 				thdraw myTick rotated angle(thdir(P,t5)) shifted (point t5 of P);
 
 				cursor := cursor + elementSize;
@@ -144,16 +144,16 @@ layout extra_lines
 
 				Ppb := (point t0 of P);
 				Pdb := unitvector(thdir(P,t0));
-				Pvb := Pdb rotated 90;
+				Pvb := Pdb rotated -90;
 				Ppe := (point t1 of P);
 				Pde := unitvector(thdir(P,t1));
-				Pve := Pde rotated 90;
+				Pve := Pde rotated -90;
 
 				if cursor > 0:
 					thdraw (Ppb - distance * Pvb) -- (Ppe - distance * Pve);
 				fi;
 
-				thdraw myDot rotated (angle(thdir(P,t2))+90) shifted (point t2 of P + distance * unitvector(thdir(P,t2) rotated -90));
+				thdraw myDot rotated (angle(thdir(P,t2))+90) shifted (point t2 of P + distance * unitvector(thdir(P,t2) rotated 90));
 
 				cursor := cursor + elementSize;
 				exitif cursor > totalLength - (elementSize / 2);
@@ -198,8 +198,8 @@ layout extra_lines
 				t4 := arctime (cursor + elementSize * 6/7) of P;
 
 				thdraw (subpath (t1,t4) of P);
-				thdraw myT rotated angle(thdir(P,t2)) shifted (point t2 of P);
-				thdraw myT rotated angle(thdir(P,t3)) shifted (point t3 of P);
+				thdraw myT rotated (180+angle(thdir(P,t2))) shifted (point t2 of P);
+				thdraw myT rotated (180+angle(thdir(P,t3))) shifted (point t3 of P);
 
 				cursor := cursor + elementSize;
 				exitif cursor > totalLength - (elementSize / 2);
@@ -226,9 +226,9 @@ layout extra_lines
 
 				thdraw (subpath (t1,t5) of P);
 
-				thdraw myTsmall rotated angle(thdir(P,t2)) shifted (point t2 of P);
-				thdraw myTlarge rotated angle(thdir(P,t3)) shifted (point t3 of P);
-				thdraw myTsmall rotated angle(thdir(P,t4)) shifted (point t4 of P);
+				thdraw myTsmall rotated (180+angle(thdir(P,t2))) shifted (point t2 of P);
+				thdraw myTlarge rotated (180+angle(thdir(P,t3))) shifted (point t3 of P);
+				thdraw myTsmall rotated (180+angle(thdir(P,t4))) shifted (point t4 of P);
 
 				cursor := cursor + elementSize;
 				exitif cursor > totalLength - (elementSize / 2);

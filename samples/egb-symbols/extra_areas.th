@@ -2,27 +2,72 @@ layout extra_areas
 	# Códigos metapost para definição de símbolos extra
 	code metapost
 
-		def a_u_pillar (expr P) =
-			path Psmall, bboxP, bboxPsmall;
+		def a_u_pillar_main (expr P) =
 			rgbcolor myOrange;
+			pair tick[], d[], p[];
 
 			T := identity;
 
 			myOrange := (1,0.6,0);
-			bboxP := bbox P;
-			Pwidth := xpart lrcorner bboxP - xpart llcorner bboxP;
-			Psmall := P scaled ((Pwidth - u) / Pwidth);
-			bboxPsmall := bbox Psmall;
-			deltaX := xpart llcorner bboxP - xpart llcorner bboxPsmall + ((xpart lrcorner bboxP - xpart llcorner bboxP) - (xpart lrcorner bboxPsmall - xpart llcorner bboxPsmall)) / 2;
-			deltaY := ypart ulcorner bboxP - ypart ulcorner bboxPsmall + ((ypart lrcorner bboxP - ypart urcorner bboxP) - (ypart lrcorner bboxPsmall - ypart urcorner bboxPsmall)) / 2;
 
-			thclean P;
+			pickup PenD;
+			thfill P withcolor myOrange;
+
+			cursor := 0;
+			totalLength := arclength P;
+			elementSize := adjust_step(totalLength, 0.01u); % symbol length nudged to be multiple of path length
+			distance := 0.4u;
 
 			pickup PenA;
+			forever:
+				t1 := arctime (cursor + elementSize / 2) of P;
+
+				p1 := point t1 of P;
+
+				d1 := unitvector(thdir(P,t1)) * distance;
+
+				thdraw p1 -- p1 + (d1 rotated 90) withcolor white;;
+
+				cursor := cursor + elementSize;
+				exitif cursor > totalLength - (elementSize / 2);
+			endfor;
+
 			thdraw P withcolor myOrange;
-			pickup PenD;
-			thfill Psmall shifted (deltaX, deltaY) withcolor myOrange;
 		enddef;
+
+		def a_u_pillar (expr P) =
+			picture myPillar;
+
+			myPillar := image(a_u_pillar_main(P));
+
+			thdraw myPillar;
+		enddef;
+
+		def a_u_pillar_with_curtains (expr P) =
+			picture myPillar;
+			path myCurtain;
+
+			myPillar := image(a_u_pillar_main(P));
+
+			thdraw myPillar;
+
+			myCurtain := (0,-.4u){dir 180}..(-0.1u,-0.3u)..{dir 0}(0,-0.2u)..(0.1u,-0.1u)..{dir -180}(0,0);
+			cursor := 0;
+			totalLength := arclength P;
+			elementSize := adjust_step(totalLength, 0.5u); % symbol length nudged to be multiple of path length
+
+			pickup PenD;
+			forever:
+				t1 := arctime (cursor + elementSize / 2) of P;
+
+				thdraw myCurtain rotated (angle(thdir(P,t1))) shifted (point t1 of P) withcolor (1,0.6,0);
+
+				cursor := cursor + elementSize;
+				exitif cursor > totalLength - (elementSize / 3);
+			endfor;
+		enddef;
+
+	endcode
 
 	endcode
 	
@@ -30,3 +75,6 @@ endlayout
 
 text en "area u:pillar" "pillar"
 text pt "area u:pillar" "coluna"
+
+text en "area u:pillar_with_curtains" "pillar with curtains"
+text pt "area u:pillar_with_curtains" "coluna com reposteiro"

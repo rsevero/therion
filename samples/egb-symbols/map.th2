@@ -160,7 +160,7 @@ line border -id area1 -close on
   346.73 554.7 333.05 681.39 263.75 637.25
 endline
 
-line wall -id l54-405-640 -reverse on
+line wall -reverse on
   189.25 653.25
   275.25 703.75 334.0 635.0 407.0 639.0
   480.0 643.0 522.0 671.0 557.0 692.0

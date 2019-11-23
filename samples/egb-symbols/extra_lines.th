@@ -2,6 +2,72 @@ layout extra_lines
 	# Códigos metapost para definição de símbolos extra
 	code metapost
 
+		def l_u_walkway_metalic(expr P) =
+			picture walkway;
+
+			walkway := image(l_u_walkway_main(P));
+			thdraw walkway withcolor (0.71, 0.71, 0.71);
+		enddef;
+
+		def l_u_walkway_soil(expr P) =
+			picture walkway;
+
+			walkway := image(l_u_walkway_main(P));
+			thdraw walkway withcolor  (0.7, 0.49, 0);
+		enddef;
+
+		def l_u_walkway_stone(expr P) =
+			picture walkway;
+
+			walkway := image(l_u_walkway_main(P));
+			thdraw walkway withcolor (0.32, 0.32, 0.32);
+		enddef;
+
+		def l_u_walkway_wood(expr P) =
+			picture walkway;
+
+			walkway := image(l_u_walkway_main(P));
+			thdraw walkway withcolor (0.45, 0.22, 0);
+		enddef;
+
+		def l_u_walkway(expr P) =
+			l_u_walkway_main(P);
+		enddef;
+
+		def l_u_walkway_main(expr P) =
+			pair tick[], d[], p[];
+
+			T := identity;
+
+			cursor := 0;
+			totalLength := arclength P;
+			elementSize := adjust_step(totalLength, 0.2u); % symbol length nudged to be multiple of path length
+			distance := 0.1u;
+
+			pickup PenD;
+			forever:
+				t1 := arctime (cursor + elementSize * 1/5) of P;
+				t2 := arctime (cursor + elementSize * 4/5) of P;
+
+				p1 := point t1 of P;
+				p2 := point t2 of P;
+
+				d1 := dir(angle(direction t1 of P)) scaled distance;
+				d2 := dir(angle(direction t2 of P)) scaled distance;
+
+				tick1 := p1 + (d1 rotated 90);
+				tick2 := p2 + (d2 rotated 90);
+				tick3 := p1 + (d1 rotated -90);
+				tick4 := p2 + (d2 rotated -90);
+
+				thdraw tick1 -- tick2;
+				thdraw tick3 -- tick4;
+
+				cursor := cursor + elementSize;
+				exitif cursor > totalLength - (elementSize / 2);
+			endfor;
+		enddef;
+
 		def l_u_abyssentrance(expr P) =
 			path myTick, myT;
 
@@ -172,6 +238,21 @@ layout extra_lines
 	endcode
 	
 endlayout
+
+text en "line u:walkway_metalic" "walkway metalic"
+text pt "line u:walkway_metalic" "passarela metálica"
+
+text en "line u:walkway_soil" "walkway soil"
+text pt "line u:walkway_soil" "passarela de terra"
+
+text en "line u:walkway_stone" "walkway stone"
+text pt "line u:walkway_stone" "passarela em pedra"
+
+text en "line u:walkway_wood" "walkway wood"
+text pt "line u:walkway_wood" "passarela de madeira"
+
+text en "line u:walkway" "walkway"
+text pt "line u:walkway" "passarela"
 
 text en "line u:pitchimney" "pit/chimney"
 text pt "line u:pitchimney" "poço e chaminé"

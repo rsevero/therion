@@ -1,6 +1,6 @@
 encoding  utf-8
-##XTHERION## xth_me_area_adjust -132.0 -132.0 918.0 793.0
-##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_area_adjust -129.0 -129.0 914.25 789.25
+##XTHERION## xth_me_area_zoom_to 400
 
 
 
@@ -96,20 +96,37 @@ point 785.0 630.0 u:walkway_stone
 
 point 605.0 660.0 u:walkway_wood
 
+line u:walkway_soil
+  397.75 492.25
+  435.5 515.5 484.5 494.5 519.75 498.5
+endline
+
+line u:walkway_metalic
+  286.0 434.5
+  330.25 455.5 347.06 478.34 367.75 486.0
+endline
+
+line u:walkway
+  290.25 425.25
+  339.75 441.75 341.0 465.5 374.25 473.75
+endline
+
 line u:abyssentrance
-  290.0 426.0
-  342.0 444.0 308.0 459.0 376.0 477.0
+  294.0 411.0
+  335.0 428.0 344.25 451.75 380.75 463.25
   smooth off
 endline
 
 line u:lowceiling
-  300.0 389.0
-  345.0 411.0 339.0 433.0 387.0 452.0
+  302.25 384.25
+  347.25 406.25 345.0 425.0 393.0 444.0
+  smooth off
 endline
 
 line u:pitchimney
-  294.0 408.0
-  354.0 434.0 334.0 450.0 383.0 464.0
+  297.25 398.5
+  357.25 424.5 338.5 438.5 387.5 452.5
+  smooth off
 endline
 
 line u:dripline
@@ -140,10 +157,20 @@ line wall
   smooth off
 endline
 
+line u:walkway_wood
+  317.25 342.0
+  380.0 364.25 345.5 386.75 422.5 404.75
+endline
+
+line u:walkway_stone
+  308.0 365.25
+  345.0 374.75 361.5 416.5 405.75 425.5
+endline
+
 line wall
-  307.0 375.0
-  357.0 396.0 409.0 469.0 472.0 436.0
-  535.0 403.0 585.0 433.0 616.0 462.0
+  322.5 326.5
+  372.5 347.5 420.0 422.75 483.0 389.75
+  546.0 356.75 605.5 399.75 636.5 428.75
   smooth off
 endline
 

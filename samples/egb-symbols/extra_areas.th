@@ -1,0 +1,46 @@
+layout extra_areas
+	# Códigos metapost para definição de símbolos extra
+	code metapost
+
+		def a_u_pillar (expr P) =
+			pair tick[], d[], p[];
+
+			T := identity;
+
+			thclean P;
+
+			cursor := 0;
+			totalLength := arclength P;
+			elementSize := adjust_step(totalLength, 0.2u); % symbol length nudged to be multiple of path length
+			distance := 0.3u;
+
+			pickup PenA;
+			thdraw P;
+
+			pickup PenD;
+			forever:
+				t1 := arctime (cursor + elementSize * 1/5) of P;
+				t2 := arctime (cursor + elementSize * 4/5) of P;
+
+				p1 := point t1 of P;
+				p2 := point t2 of P;
+
+				d1 := unitvector(thdir(P,t1)) * distance;
+				d2 := unitvector(thdir(P,t2)) * distance;
+
+				tick1 := p1 + (d1 rotated 90);
+				tick2 := p2 + (d2 rotated 90);
+
+				thdraw tick1 -- tick2;
+
+				cursor := cursor + elementSize;
+				exitif cursor > totalLength - (elementSize / 2);
+			endfor;
+		enddef;
+
+	endcode
+	
+endlayout
+
+text en "area u:pillar" "pillar"
+text pt "area u:pillar" "coluna"

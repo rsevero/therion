@@ -3,31 +3,31 @@ layout extra_lines
 	code metapost
 
 		def l_u_walkway_metalic(expr P) =
-			picture walkway;
+			picture walkway_image;
 
-			walkway := image(l_u_walkway_main(P));
-			thdraw walkway withcolor (0.71, 0.71, 0.71);
+			walkway_image := image(l_u_walkway_main(P));
+			thdraw walkway_image withcolor (0.71, 0.71, 0.71);
 		enddef;
 
 		def l_u_walkway_soil(expr P) =
-			picture walkway;
+			picture walkway_image;
 
-			walkway := image(l_u_walkway_main(P));
-			thdraw walkway withcolor  (0.7, 0.49, 0);
+			walkway_image := image(l_u_walkway_main(P));
+			thdraw walkway_image withcolor  (0.7, 0.49, 0);
 		enddef;
 
 		def l_u_walkway_stone(expr P) =
-			picture walkway;
+			picture walkway_image;
 
-			walkway := image(l_u_walkway_main(P));
-			thdraw walkway withcolor (0.32, 0.32, 0.32);
+			walkway_image := image(l_u_walkway_main(P));
+			thdraw walkway_image withcolor (0.32, 0.32, 0.32);
 		enddef;
 
 		def l_u_walkway_wood(expr P) =
-			picture walkway;
+			picture walkway_image;
 
-			walkway := image(l_u_walkway_main(P));
-			thdraw walkway withcolor (0.45, 0.22, 0);
+			walkway_image := image(l_u_walkway_main(P));
+			thdraw walkway_image withcolor (0.45, 0.22, 0);
 		enddef;
 
 		def l_u_walkway(expr P) =

@@ -1,6 +1,6 @@
 encoding  utf-8
-##XTHERION## xth_me_area_adjust -129.0 -129.0 914.25 789.25
-##XTHERION## xth_me_area_zoom_to 400
+##XTHERION## xth_me_area_adjust -132.0 -132.0 918.0 824.0
+##XTHERION## xth_me_area_zoom_to 100
 
 
 
@@ -99,16 +99,19 @@ point 605.0 660.0 u:walkway_wood
 line u:walkway_soil
   397.75 492.25
   435.5 515.5 484.5 494.5 519.75 498.5
+  smooth off
 endline
 
 line u:walkway_metalic
   286.0 434.5
   330.25 455.5 347.06 478.34 367.75 486.0
+  smooth off
 endline
 
 line u:walkway
   290.25 425.25
   339.75 441.75 341.0 465.5 374.25 473.75
+  smooth off
 endline
 
 line u:abyssentrance
@@ -147,38 +150,42 @@ line u:joint
   smooth off
 endline
 
-area u:danger
+area u:pillar
+  area1
 endarea
 
-line wall
-  279.0 449.0
-  306.0 465.0 353.0 505.0 426.0 509.0
-  499.0 513.0 529.0 502.0 564.0 523.0
+line border -id area1 -close on
+  263.75 637.25
+  232.4 617.29 265.47 563.73 290.0 561.0
+  346.73 554.7 333.05 681.39 263.75 637.25
+endline
+
+line wall -id l54-405-640 -reverse on
+  189.25 653.25
+  275.25 703.75 334.0 635.0 407.0 639.0
+  480.0 643.0 522.0 671.0 557.0 692.0
   smooth off
 endline
 
 line u:walkway_wood
   317.25 342.0
   380.0 364.25 345.5 386.75 422.5 404.75
+  smooth off
 endline
 
 line u:walkway_stone
   308.0 365.25
   345.0 374.75 361.5 416.5 405.75 425.5
+  smooth off
 endline
 
 line wall
-  322.5 326.5
-  372.5 347.5 420.0 422.75 483.0 389.75
+  179.75 315.25
+  303.0 245.0 420.0 422.75 483.0 389.75
   546.0 356.75 605.5 399.75 636.5 428.75
   smooth off
 endline
 
 endscrap
-
-map xx
-  x
-endmap
-
 
 

@@ -4,11 +4,14 @@ layout extra_areas
 
 		def a_u_pillar (expr P) =
 			path Psmall, bboxP, bboxPsmall;
+			rgbcolor myOrange;
 
 			T := identity;
 
-			Psmall := P scaled 0.9;
+			myOrange := (1,0.6,0);
 			bboxP := bbox P;
+			Pwidth := xpart lrcorner bboxP - xpart llcorner bboxP;
+			Psmall := P scaled ((Pwidth - u) / Pwidth);
 			bboxPsmall := bbox Psmall;
 			deltaX := xpart llcorner bboxP - xpart llcorner bboxPsmall + ((xpart lrcorner bboxP - xpart llcorner bboxP) - (xpart lrcorner bboxPsmall - xpart llcorner bboxPsmall)) / 2;
 			deltaY := ypart ulcorner bboxP - ypart ulcorner bboxPsmall + ((ypart lrcorner bboxP - ypart urcorner bboxP) - (ypart lrcorner bboxPsmall - ypart urcorner bboxPsmall)) / 2;
@@ -16,45 +19,9 @@ layout extra_areas
 			thclean P;
 
 			pickup PenA;
-			thdraw P;
+			thdraw P withcolor myOrange;
 			pickup PenD;
-			thfill P scaled 0.9 shifted (deltaX, deltaY) withcolor green;
-		enddef;
-
-		def a_u_pillarb (expr P) =
-			pair tick[], d[], p[];
-
-			T := identity;
-
-			thclean P;
-
-			pickup PenA;
-			thdraw P;
-
-			cursor := 0;
-			totalLength := arclength P;
-			elementSize := adjust_step(totalLength, 0.2u); % symbol length nudged to be multiple of path length
-			distance := 0.3u;
-
-			pickup PenD;
-			forever:
-				t1 := arctime (cursor) of P;
-				t2 := arctime (cursor + elementSize) of P;
-
-				p1 := point t1 of P;
-				p2 := point t2 of P;
-
-				d1 := unitvector(thdir(P,t1)) * distance;
-				d2 := unitvector(thdir(P,t2)) * distance;
-
-				tick1 := p1 + (d1 rotated 90);
-				tick2 := p2 + (d2 rotated 90);
-
-				thdraw tick1 -- tick2;
-
-				cursor := cursor + elementSize;
-				exitif cursor > totalLength - (elementSize / 2);
-			endfor;
+			thfill Psmall shifted (deltaX, deltaY) withcolor myOrange;
 		enddef;
 
 	endcode

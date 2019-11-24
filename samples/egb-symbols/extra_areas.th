@@ -16,7 +16,7 @@ layout extra_areas
 			cursor := 0;
 			totalLength := arclength P;
 			elementSize := adjust_step(totalLength, 0.01u); % symbol length nudged to be multiple of path length
-			distance := 0.4u;
+			borderSize := 0.3u;
 
 			pickup PenA;
 			forever:
@@ -24,7 +24,7 @@ layout extra_areas
 
 				p1 := point t1 of P;
 
-				d1 := unitvector(thdir(P,t1)) * distance;
+				d1 := unitvector(thdir(P,t1)) * borderSize;
 
 				thdraw p1 -- p1 + (d1 rotated 90) withcolor white;;
 
@@ -32,6 +32,7 @@ layout extra_areas
 				exitif cursor > totalLength - (elementSize / 2);
 			endfor;
 
+			pickup PenD;
 			thdraw P withcolor myOrange;
 		enddef;
 
@@ -52,6 +53,7 @@ layout extra_areas
 			thdraw myPillar;
 
 			myCurtain := (0,-.4u){dir 180}..(-0.1u,-0.3u)..{dir 0}(0,-0.2u)..(0.1u,-0.1u)..{dir -180}(0,0);
+			myCurtain := myCurtain scaled (0.2 / 0.4);
 			cursor := 0;
 			totalLength := arclength P;
 			elementSize := adjust_step(totalLength, 0.5u); % symbol length nudged to be multiple of path length
@@ -60,7 +62,7 @@ layout extra_areas
 			forever:
 				t1 := arctime (cursor + elementSize / 2) of P;
 
-				thdraw myCurtain rotated (angle(thdir(P,t1))) shifted (point t1 of P) withcolor (1,0.6,0);
+				thdraw myCurtain rotated (180+angle(thdir(P,t1))) shifted (point t1 of P) withcolor (1,0.6,0);
 
 				cursor := cursor + elementSize;
 				exitif cursor > totalLength - (elementSize / 3);

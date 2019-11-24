@@ -2,6 +2,16 @@ layout extra_areas
 	# Códigos metapost para definição de símbolos extra
 	code metapost
 
+		def a_u_stalagmite (expr P) =
+			rgbcolor myOrange;
+			T := identity;
+
+			myOrange := (1,0.6,0);
+
+			pickup PenA;
+			thfill P withcolor myOrange;
+		enddef;
+
 		def a_u_stalactite_stalagmite (expr P) =
 			rgbcolor myOrange;
 			picture tmpPicFill, tmpPicDraw;
@@ -115,6 +125,9 @@ layout extra_areas
 	endcode
 	
 endlayout
+
+text en "area u:stalagmite" "stalagmite"
+text pt "area u:stalagmite" "estalagmite"
 
 text en "area u:stalactite_stalagmite" "stalactite and stalagmite"
 text pt "area u:stalactite_stalagmite" "estalactite e estalagmite"

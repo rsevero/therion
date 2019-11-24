@@ -4,26 +4,33 @@ layout extra_areas
 
 		def a_u_stalactite_stalagmite (expr P) =
 			rgbcolor myOrange;
-			picture tmp_pic;
+			picture tmpPicFill, tmpPicDraw;
+			path bboxP, clipFill, clipDraw;
 
 			T := identity;
 
 			myOrange := (1,0.6,0);
-			halfLength := (arclength P) / 2;
-
-			t1 := arctime 0 of P;
-			t2 := arctime (halfLength) of P;
-
-			pickup PenD;
-			thclean P;
-
-			tmp_pic := image(fill subpath (t1, t2) of P -- cycle withcolor myOrange;);
-			clip tmp_pic to P;
-			drawoptions();
-			draw tmp_pic;
+			bboxP := bbox P;
+			clipFill := ulcorner bboxP -- llcorner bboxP -- lrcorner bboxP -- cycle;
+			clipDraw := ulcorner bboxP -- urcorner bboxP -- lrcorner bboxP -- cycle;
 
 			pickup PenA;
-			thdraw P withcolor myOrange;
+			thclean P;
+
+			tmpPicFill := image(
+				fill P withcolor myOrange;
+				draw P withcolor myOrange;
+			);
+			clip tmpPicFill to clipFill;
+			drawoptions();
+			draw tmpPicFill;
+
+			tmpPicDraw := image(
+				draw P withcolor myOrange;
+			);
+			clip tmpPicDraw to clipDraw;
+			drawoptions();
+			draw tmpPicDraw;
 		enddef;
 
 		def a_u_stalactite (expr P) =

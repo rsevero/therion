@@ -2,6 +2,42 @@ layout extra_areas
 	# Códigos metapost para definição de símbolos extra
 	code metapost
 
+		beginpattern(pattern_mud_crack);
+			picture mud_crack_raw;
+			mud_crack_raw := image(
+				linecap := butt;
+				linejoin := mitered;
+				pickup pencircle scaled 8bp;
+				draw (172.531006,466.222992)--(225.104996,425.453003)--(271.855011,440.605011)
+					--(323.921997,390.414001)--(346.839996,423.699005)--(414.757996,363.097992)
+					--(390.753998,275.722992)--(414.515991,281.648010)--(438.726990,322.277008);
+				pickup pencircle scaled 4bp;
+				draw (244.710999,252.141006)--(232.354996,272.496002)--(308.351990,293.101990)
+					--(257.156006,310.019989)--(266.289001,357.613007)--(291.085999,380.539001)
+					--(303.242004,428.855011)--(282.320007,477.753998)--(393.207001,502.281006)
+					--(380.324005,518.754028);
+				pickup pencircle scaled 6bp;
+				draw (172.531006,466.222992)--(244.710999,518.554993);
+				pickup pencircle scaled 8bp;
+				draw (173.410004,322.277008)--(205.151993,357.402008)--(244.710999,322.277008)
+					--(266.289001,357.613007);
+				pickup pencircle scaled 8bp;
+				draw (380.324005,252.992004)--(364.523010,292.832001)--(380.324005,322.277008)
+					--(346.839996,423.699005)--(417.410004,491.484009)--(393.207001,502.281006);
+				pickup pencircle scaled 8bp;
+				draw (437.769989,466.222992)--(417.410004,491.484009)--(380.324005,392.070007);
+			);
+			picture mud_crack;
+			mud_crack := mud_crack_raw shifted (-(llcorner mud_crack_raw)-(urcorner mud_crack_raw - llcorner mud_crack_raw)/2) scaled (1.5u / max((xpart urcorner mud_crack_raw) - (xpart llcorner mud_crack_raw), (ypart urcorner mud_crack_raw) - (ypart llcorner mud_crack_raw)));
+			draw mud_crack;
+		endpattern;
+
+		def a_u_mud_crack (expr Path) =
+			T:=identity;
+			thclean Path;
+			thfill Path withpattern pattern_mud_crack;
+		enddef;
+
 		def a_u_stalagmite (expr P) =
 			rgbcolor myOrange;
 			T := identity;
@@ -125,6 +161,9 @@ layout extra_areas
 	endcode
 	
 endlayout
+
+text en "area u:mud_crack" "cracked mud"
+text pt "area u:mud_crack" "lama rachada"
 
 text en "area u:stalagmite" "stalagmite"
 text pt "area u:stalagmite" "estalagmite"

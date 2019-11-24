@@ -177,6 +177,18 @@ area u:stalactite
   l66-405-561
 endarea
 
+area u:stalactite_stalagmite
+  l68-248-405
+endarea
+
+line border -id l68-248-405 -close on -visible off
+  204.0 447.0
+  146.4 417.04 221.43 373.08 250.0 406.0
+  305.84 470.34 272.83 461.18 266.75 448.0
+  262.25 438.25 237.31 413.4 229.75 416.5
+  210.86 424.23 224.44 457.63 204.0 447.0
+endline
+
 line border -id l66-405-561 -close on -visible off
   420.0 606.0
   403.54 606.84 384.99 580.51 405.0 563.0

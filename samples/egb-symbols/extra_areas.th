@@ -2,6 +2,30 @@ layout extra_areas
 	# Códigos metapost para definição de símbolos extra
 	code metapost
 
+		def a_u_stalactite_stalagmite (expr P) =
+			rgbcolor myOrange;
+			picture tmp_pic;
+
+			T := identity;
+
+			myOrange := (1,0.6,0);
+			halfLength := (arclength P) / 2;
+
+			t1 := arctime 0 of P;
+			t2 := arctime (halfLength) of P;
+
+			pickup PenD;
+			thclean P;
+
+			tmp_pic := image(fill subpath (t1, t2) of P -- cycle withcolor myOrange;);
+			clip tmp_pic to P;
+			drawoptions();
+			draw tmp_pic;
+
+			pickup PenA;
+			thdraw P withcolor myOrange;
+		enddef;
+
 		def a_u_stalactite (expr P) =
 			rgbcolor myOrange;
 			T := identity;
@@ -14,7 +38,7 @@ layout extra_areas
 
 		def a_u_pillar_main (expr P) =
 			rgbcolor myOrange;
-			pair tick[], d[], p[];
+			pair d[], p[];
 
 			T := identity;
 
@@ -26,7 +50,7 @@ layout extra_areas
 			cursor := 0;
 			totalLength := arclength P;
 			elementSize := adjust_step(totalLength, 0.01u); % symbol length nudged to be multiple of path length
-			borderSize := 0.3u;
+			borderWidth := 0.3u;
 
 			pickup PenA;
 			forever:
@@ -34,7 +58,7 @@ layout extra_areas
 
 				p1 := point t1 of P;
 
-				d1 := unitvector(thdir(P,t1)) * borderSize;
+				d1 := unitvector(thdir(P,t1)) * borderWidth;
 
 				thdraw p1 -- p1 + (d1 rotated 90) withcolor white;;
 
@@ -84,6 +108,9 @@ layout extra_areas
 	endcode
 	
 endlayout
+
+text en "area u:stalactite_stalagmite" "stalactite and stalagmite"
+text pt "area u:stalactite_stalagmite" "estalactite e estalagmite"
 
 text en "area u:stalactite" "stalactite"
 text pt "area u:stalactite" "estalactite"

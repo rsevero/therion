@@ -1,6 +1,6 @@
 encoding  utf-8
-##XTHERION## xth_me_area_adjust -129.0 -129.0 914.25 821.0
-##XTHERION## xth_me_area_zoom_to 400
+##XTHERION## xth_me_area_adjust -132.0 -132.0 918.0 824.0
+##XTHERION## xth_me_area_zoom_to 100
 
 
 
@@ -171,6 +171,16 @@ line border -id area1 -close on -visible off
   263.75 637.25
   232.4 617.29 265.47 563.73 290.0 561.0
   346.73 554.7 333.05 681.39 263.75 637.25
+endline
+
+area u:stalactite
+  l66-405-561
+endarea
+
+line border -id l66-405-561 -close on -visible off
+  420.0 606.0
+  403.54 606.84 384.99 580.51 405.0 563.0
+  440.18 532.22 493.93 602.24 420.0 606.0
 endline
 
 line wall -reverse on

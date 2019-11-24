@@ -2,6 +2,16 @@ layout extra_areas
 	# Códigos metapost para definição de símbolos extra
 	code metapost
 
+		def a_u_stalactite (expr P) =
+			rgbcolor myOrange;
+			T := identity;
+
+			myOrange := (1,0.6,0);
+
+			pickup PenD;
+			thdraw P withcolor myOrange;
+		enddef;
+
 		def a_u_pillar_main (expr P) =
 			rgbcolor myOrange;
 			pair tick[], d[], p[];
@@ -74,6 +84,9 @@ layout extra_areas
 	endcode
 	
 endlayout
+
+text en "area u:stalactite" "stalactite"
+text pt "area u:stalactite" "estalactite"
 
 text en "area u:pillar" "pillar"
 text pt "area u:pillar" "coluna"

@@ -26,8 +26,6 @@ point 785.0 480.0 u:audio
 
 point 605.0 510.0 u:bat
 
-point 635.0 510.0 curtain
-
 point 665.0 510.0 u:bone
 
 point 695.0 510.0 u:curtains
@@ -43,8 +41,6 @@ point 605.0 540.0 u:discs_stalactites
 point 635.0 540.0 u:discs_stalagmites
 
 point 665.0 540.0 u:discs_pillars
-
-point 695.0 540.0 helictite
 
 point 725.0 540.0 u:helictites
 
@@ -70,21 +66,15 @@ point 605.0 600.0 u:volcano
 
 point 635.0 600.0 u:altar
 
-point 665.0 600.0 bridge
-
 point 695.0 600.0 u:eletric_light
 
 point 725.0 600.0 u:ex_voto
 
 point 755.0 600.0 u:gate
 
-point 785.0 600.0 fixed-ladder
-
 point 605.0 630.0 u:masonry
 
 point 635.0 630.0 u:nameplate
-
-point 665.0 630.0 steps
 
 point 695.0 630.0 u:walkway
 

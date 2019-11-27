@@ -44,6 +44,8 @@ point 635.0 540.0 u:discs_stalagmites
 
 point 665.0 540.0 u:discs_pillars
 
+point 695.0 540.0 u:notwheelchair
+
 point 725.0 540.0 u:helictites
 
 point 755.0 540.0 u:human_bone

@@ -251,8 +251,8 @@ layout extra_points
 			thdraw ex_voto;
 		enddef;
 
-		picture eletric_light_raw;
-	 	eletric_light_raw := image(
+		picture electric_light_raw;
+	 	electric_light_raw := image(
 			linecap := butt;
 			linejoin := mitered;
 			fill (312.281006,246.093994)--(338.015991,246.093994)--(338.015991,178.391006)
@@ -305,12 +305,12 @@ layout extra_points
 				..controls (375.773010,535.715027) and (376.718994,535.020020)..(377.675995,534.401978)
 				--cycle;
 		);
-		picture eletric_light;
-		eletric_light := eletric_light_raw shifted (-(llcorner eletric_light_raw)-(urcorner eletric_light_raw - llcorner eletric_light_raw)/2) scaled (u / max((xpart urcorner eletric_light_raw) - (xpart llcorner eletric_light_raw), (ypart urcorner eletric_light_raw) - (ypart llcorner eletric_light_raw)));
+		picture electric_light;
+		electric_light := electric_light_raw shifted (-(llcorner electric_light_raw)-(urcorner electric_light_raw - llcorner electric_light_raw)/2) scaled (u / max((xpart urcorner electric_light_raw) - (xpart llcorner electric_light_raw), (ypart urcorner electric_light_raw) - (ypart llcorner electric_light_raw)));
 
-		def p_u_eletric_light(expr pos, theta, sc, al) = 
+		def p_u_electric_light(expr pos, theta, sc, al) = 
 			T:=identity aligned al rotated theta scaled sc shifted pos;
-			thdraw eletric_light;
+			thdraw electric_light;
 		enddef;
 
 		picture altar_raw;
@@ -1349,8 +1349,8 @@ text pt "point u:gate" "portão"
 text en "point u:ex_voto" "ex-voto"
 text pt "point u:ex_voto" "ex-voto"
 
-text en "point u:eletric_light" "eletric light"
-text pt "point u:eletric_light" "luz elétrica"
+text en "point u:electric_light" "electric light"
+text pt "point u:electric_light" "luz elétrica"
 
 text en "point u:altar" "altar"
 text pt "point u:altar" "altar"

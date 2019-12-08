@@ -1543,7 +1543,7 @@ text en "point u:photo" "photo"
 text pt "point u:photo" "foto"
 
 text en "point u:archeo_excavation" "archeological excavation"
-text pt "point u:archeo_excavation" "excavação arqueológica"
+text pt "point u:archeo_excavation" "escavação arqueológica"
 
 text en "point u:audio" "audio"
 text pt "point u:audio" "áudio"

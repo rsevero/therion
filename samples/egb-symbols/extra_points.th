@@ -1483,10 +1483,10 @@ layout extra_points
 endlayout
 
 text en "point u:notwheelchair" "not wheelchair accessible"
-text pt "point u:notwheelchair" "não acessível com cadeiras de rodas"
+text pt "point u:notwheelchair" "não acessível em cadeiras de rodas"
 
 text en "point u:wheelchair" "wheelchair accessible"
-text pt "point u:wheelchair" "acessível com cadeiras de rodas"
+text pt "point u:wheelchair" "acessível em cadeiras de rodas"
 
 text en "point u:walkway_metalic" "walkway metalic"
 text pt "point u:walkway_metalic" "passarela metálica"
@@ -1588,10 +1588,10 @@ text en "point u:raft_cone" "raft cone"
 text pt "point u:raft_cone" "cone"
 
 text en "point u:stalactite_stalagmite" "stalactite and stalagmite"
-text pt "point u:stalactite_stalagmite" "estalagtite e estalagmite"
+text pt "point u:stalactite_stalagmite" "estalactite e estalagmite"
 
 text en "point u:stalactites_stalagmites" "stalactites and stalagmites"
-text pt "point u:stalactites_stalagmites" "estalagtites e estalagmites"
+text pt "point u:stalactites_stalagmites" "estalactites e estalagmites"
 
 text en "point u:disc_stalactite" "disc at stalactite"
 text pt "point u:disc_stalactite" "disco em estalactite"

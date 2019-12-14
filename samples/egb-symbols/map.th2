@@ -1,6 +1,6 @@
 encoding  utf-8
-##XTHERION## xth_me_area_adjust -132.0 -132.0 918.0 824.0
-##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_area_adjust -129.0 -129.0 914.25 821.0
+##XTHERION## xth_me_area_zoom_to 400
 
 
 
@@ -214,6 +214,14 @@ line border -id l66-405-561 -close on -visible off
   420.0 606.0
   403.54 606.84 384.99 580.51 405.0 563.0
   440.18 532.22 493.93 602.24 420.0 606.0
+endline
+
+line slope
+  430.25 428.75
+  459.75 440.5 479.8 397.56 527.5 410.75
+  orientation 161.1
+  smooth off
+  l-size 15.4
 endline
 
 line wall -reverse on

@@ -405,6 +405,16 @@ int thsymbolset__get_id(const char * symclass, const char * symbol)
             c2(TT_POINT_SUBTYPE_WINTER,SYMP_AIRDRAUGHT_WINTER);
           }
           break;
+        case TT_POINT_TYPE_WALKWAY:
+          sgroup(SYMX_POINT_WALKWAY)
+          switch (subtype) {
+            c2(TT_POINT_SUBTYPE_WALKWAY,SYMP_WALKWAY);
+            c2(TT_POINT_SUBTYPE_WALKWAYMETALIC,SYMP_WALKWAY_METALIC);
+            c2(TT_POINT_SUBTYPE_WALKWAYSOIL,SYMP_WALKWAY_SOIL);
+            c2(TT_POINT_SUBTYPE_WALKWAYSTONE,SYMP_WALKWAY_STONE);
+            c2(TT_POINT_SUBTYPE_WALKWAYWOOD,SYMP_WALKWAY_WOOD);
+          }
+          break;
         cp3(TT_POINT_TYPE_ALTAR,SYMP_ALTAR);
         cp3(TT_POINT_TYPE_ALTITUDE,SYMP_ALTITUDE);
         cp3(TT_POINT_TYPE_ANASTOMOSIS,SYMP_ANASTOMOSIS);
@@ -510,7 +520,6 @@ int thsymbolset__get_id(const char * symclass, const char * symbol)
         cp3(TT_POINT_TYPE_VEGETABLE_DEBRIS,SYMP_VEGETABLEDEBRIS);
         cp3(TT_POINT_TYPE_VIA_FERRATA,SYMP_VIAFERRATA);
         cp3(TT_POINT_TYPE_VOLCANO,SYMP_VOLCANO);
-        cp3(TT_POINT_TYPE_WALKWAY,SYMP_WALKWAY);
         cp3(TT_POINT_TYPE_WALL_CALCITE,SYMP_WALLCALCITE);
         cp3(TT_POINT_TYPE_WATER,SYMP_WATER);
         cp3(TT_POINT_TYPE_WATERDRIP,SYMP_WATERDRIP);
@@ -682,6 +691,10 @@ int thsymbolset__get_group(int group_id, int cid) {
     group(20,SYMP_NAMEPLATE);
     group(21,SYMP_GATE);
     group(22,SYMP_ELECTRICLIGHT);
+    group(23,SYMP_WALKWAY_METALIC);
+    group(24,SYMP_WALKWAY_SOIL);
+    group(25,SYMP_WALKWAY_STONE);
+    group(26,SYMP_WALKWAY_WOOD);
     egroup
 
     bgroup(SYMX_SPELEOTHEMS)
@@ -877,6 +890,14 @@ int thsymbolset__get_group(int group_id, int cid) {
     group(0,SYMP_HEIGHT_POSITIVE)
     group(1,SYMP_HEIGHT_NEGATIVE)
     group(2,SYMP_HEIGHT_UNSIGNED)
+    egroup
+
+    bgroup(SYMX_POINT_WALKWAY)
+    group(0,SYMP_WALKWAY)
+    group(1,SYMP_WALKWAY_METALIC)
+    group(2,SYMP_WALKWAY_SOIL)
+    group(3,SYMP_WALKWAY_STONE)
+    group(4,SYMP_WALKWAY_WOOD)
     egroup
   }
   return rv;
@@ -1454,6 +1475,10 @@ void thsymbolset::export_pdf(class thlayout * layout, FILE * mpf, unsigned & sfi
   legend_point(SYMP_TREETRUNK,thT("point tree-trunk",layout->lang));
   legend_point(SYMP_VOLCANO,thT("point volcano",layout->lang));
   legend_point(SYMP_WALKWAY,thT("point walkway",layout->lang));
+  legend_point(SYMP_WALKWAY_METALIC,thT("point walkway:metalic",layout->lang));
+  legend_point(SYMP_WALKWAY_SOIL,thT("point walkway:soil",layout->lang));
+  legend_point(SYMP_WALKWAY_STONE,thT("point walkway:stone",layout->lang));
+  legend_point(SYMP_WALKWAY_WOOD,thT("point walkway:wood",layout->lang));
   legend_point(SYMP_WATERDRIP,thT("point water-drip",layout->lang));
   legend_point(SYMP_WHEELCHAIR,thT("point wheelchair",layout->lang));
 

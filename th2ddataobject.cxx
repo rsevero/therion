@@ -1,14 +1,14 @@
 /**
  * @file th2ddataobject.cxx
  */
-  
+
 /* Copyright (C) 2000 Stacho Mudrak
- * 
+ *
  * $Date: $
  * $RCSfile: $
  * $Revision: $
  *
- * -------------------------------------------------------------------- 
+ * --------------------------------------------------------------------
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -18,13 +18,13 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  * --------------------------------------------------------------------
  */
- 
+
 #include "th2ddataobject.h"
 #include "thexception.h"
 #include "thsymbolset.h"
@@ -49,7 +49,7 @@ th2ddataobject::~th2ddataobject()
 }
 
 
-int th2ddataobject::get_class_id() 
+int th2ddataobject::get_class_id()
 {
   return TT_2DDATAOBJECT_CMD;
 }
@@ -83,12 +83,12 @@ void th2ddataobject::set(thcmd_option_desc cod, char ** args, int argenc, unsign
 {
   int i;
   switch (cod.id) {
-  
+
     case TT_2DOBJ_SCALE:
       th2dparse_scale(*args, this->scale, this->scale_numeric);
       if (this->get_class_id() == TT_AREA_CMD)
         ththrow(("scale specification for area not allowed"))
-      break;    
+      break;
 
     case TT_2DOBJ_CLIP:
       i = thmatch_token(*args, thtt_onoffauto);
@@ -105,7 +105,7 @@ void th2ddataobject::set(thcmd_option_desc cod, char ** args, int argenc, unsign
         default:
           ththrow(("invalid clip -- %s",*args))
       }
-      break;    
+      break;
 
     case TT_2DOBJ_VISIBILITY:
       i = thmatch_token(*args, thtt_bool);
@@ -119,23 +119,24 @@ void th2ddataobject::set(thcmd_option_desc cod, char ** args, int argenc, unsign
         default:
           ththrow(("invalid visibility switch -- %s",*args))
       }
-      break;    
+      break;
 
     case TT_2DOBJ_PLACE:
       this->place = thmatch_token(*args, thtt_2ddataobject_place);
       if (this->place == TT_2DOBJ_PLACE_UNKNOWN)
         ththrow(("invalid place value -- %s",*args))
-      break;    
-      
+      break;
+
     case TT_2DOBJ_CONTEXT:
       this->context = thsymbolset__get_id(args[0], args[1]);
       if (this->context < 0)
         ththrow(("invalid object context -- %s %s", args[0], args[1]))
-      if ((this->context > SYMP_ZZZ) 
+      if ((this->context > SYMP_ZZZ)
          && (this->context != SYMX_POINT_AIRDRAUGHT)
          && (this->context != SYMX_POINT_HEIGHT)
          && (this->context != SYMX_POINT_PASSAGEHEIGHT)
          && (this->context != SYMX_POINT_STATION)
+         && (this->context != SYMX_POINT_WALKWAY)
          && (this->context != SYMX_POINT_WATERFLOW)
          && (this->context != SYMX_LINE_BORDER)
          && (this->context != SYMX_LINE_SURVEY)
@@ -146,7 +147,7 @@ void th2ddataobject::set(thcmd_option_desc cod, char ** args, int argenc, unsign
 
     default:
       thdataobject::set(cod, args, argenc, indataline);
-      
+
   }
 }
 

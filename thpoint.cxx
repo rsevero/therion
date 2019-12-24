@@ -748,6 +748,17 @@ bool thpoint::export_mp(class thexpmapmpxs * out)
       }
       break;
 
+    case TT_POINT_TYPE_WALKWAY:
+      switch (this->subtype) {
+        thpoint_type_export_mp(TT_POINT_SUBTYPE_WALKWAYMETALIC,SYMP_WALKWAY_METALIC);
+        thpoint_type_export_mp(TT_POINT_SUBTYPE_WALKWAYSOIL,SYMP_WALKWAY_SOIL);
+        thpoint_type_export_mp(TT_POINT_SUBTYPE_WALKWAYSTONE,SYMP_WALKWAY_STONE);
+        thpoint_type_export_mp(TT_POINT_SUBTYPE_WALKWAYWOOD,SYMP_WALKWAY_WOOD);
+        default:
+          macroid = SYMP_WALKWAY;
+      }
+      break;
+
     case TT_POINT_TYPE_CONTINUATION:
       macroid = SYMP_CONTINUATION;
       {
@@ -817,7 +828,6 @@ bool thpoint::export_mp(class thexpmapmpxs * out)
     thpoint_type_export_mp(TT_POINT_TYPE_TREETRUNK,SYMP_TREETRUNK)
     thpoint_type_export_mp(TT_POINT_TYPE_VIA_FERRATA,SYMP_VIAFERRATA)
     thpoint_type_export_mp(TT_POINT_TYPE_VOLCANO,SYMP_VOLCANO)
-    thpoint_type_export_mp(TT_POINT_TYPE_WALKWAY,SYMP_WALKWAY)
     thpoint_type_export_mp(TT_POINT_TYPE_WATERDRIP,SYMP_WATERDRIP)
     thpoint_type_export_mp(TT_POINT_TYPE_WHEELCHAIR,SYMP_WHEELCHAIR)
 

@@ -1335,6 +1335,26 @@ def p_walkway_EGB(expr pos, theta, sc, al) =
 	thdraw EGB_walkway;
 enddef;
 
+def p_walkway_metalic_EGB(expr pos, theta, sc, al) =
+	T:=identity rotated theta aligned al scaled sc shifted pos;
+	thdraw EGB_walkway withcolor (0.71, 0.71, 0.71);
+enddef;
+
+def p_walkway_soil_EGB(expr pos, theta, sc, al) =
+	T:=identity rotated theta aligned al scaled sc shifted pos;
+	thdraw EGB_walkway withcolor (0.7, 0.49, 0);
+enddef;
+
+def p_walkway_stone_EGB(expr pos, theta, sc, al) =
+	T:=identity rotated theta aligned al scaled sc shifted pos;
+	thdraw EGB_walkway withcolor (0.32, 0.32, 0.32);
+enddef;
+
+def p_walkway_wood_EGB(expr pos, theta, sc, al) =
+	T:=identity rotated theta aligned al scaled sc shifted pos;
+	thdraw EGB_walkway withcolor (0.45, 0.22, 0);
+enddef;
+
 
 picture EGB_water_drip_raw;
 EGB_water_drip_raw := image(

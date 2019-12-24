@@ -954,6 +954,12 @@ Point is a command for drawing a point map symbol.
     |painted|,
     |temporary| (default);
 
+    {\it walkway:}
+    |metalic|,
+    |soil|,
+    |stone|,
+    |wood|;
+
     {\it water-flow:}
     |intermittent|,
     |paleo|,
@@ -999,8 +1005,18 @@ Point is a command for drawing a point map symbol.
 \NEW{5.3}|<lang:XX>| = creates multilingual label (see |string| type for
    detailed description)
 
-  * |value| = value of height, passage-height or altitude label or point
+  * |value| = value of altitude, height or passage-height label or point
      dimensions
+
+      {\it altitude:} the value specified is the altitude difference from
+      the nearest station. If the altitude value is prefixed by ``|fix|''
+      (e.g. |-value [fix 1300]|), this value is used as an absolute altitude.
+      The value can optionally be followed by length units.
+
+      {\it dimensions:}
+      |-value [<above> <below> [<units>]]|
+      specifies passage dimensions a\-bo\-ve/below centerline
+      plane used in 3D model.
 
       {\it height:} according to the sign of the value (positive, negative or
       unsigned), this type of symbol represents chimney height, pit depth
@@ -1013,16 +1029,6 @@ Point is a command for drawing a point map symbol.
       floor or water depth), |<number>| (the distance between floor
       and ceiling) and |[+<number> -<number>]| (the distance to ceiling and
       distance to floor).
-
-      {\it altitude:} the value specified is the altitude difference from
-      the nearest station. If the altitude value is prefixed by ``|fix|''
-      (e.g. |-value [fix 1300]|), this value is used as an absolute altitude.
-      The value can optionally be followed by length units.
-
-      {\it dimensions:}
-      |-value [<above> <below> [<units>]]|
-      specifies passage dimensions a\-bo\-ve/below centerline
-      plane used in 3D model.
 \endoptions
 
 

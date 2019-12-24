@@ -1743,6 +1743,22 @@ therion: point walkway
 en: walkway
 pt: passarela
 
+therion: point walkway:metalic
+en: metalic walkway
+pt: passarela metálica
+
+therion: point walkway:soil
+en: soil walkway
+pt: passarela em terra batida
+
+therion: point walkway:stone
+en: stone walkway
+pt: passarela de pedra
+
+therion: point walkway:wood
+en: wood walkway
+pt: passarela de madeira
+
 therion: point water-drip
 en: water-drip
 pt: gotejamento

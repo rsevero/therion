@@ -115,6 +115,11 @@ let p_vegetabledebris = p_vegetabledebris_ASF;
 let p_viaferrata = p_viaferrata_SKBB;
 let p_volcano = p_volcano_EGB;
 let p_walkway = p_walkway_EGB;
+let p_walkway_metalic = p_walkway_metalic_EGB;
+let p_walkway_soil = p_walkway_soil_EGB;
+let p_walkway_stone = p_walkway_stone_EGB;
+let p_walkway_wood = p_walkway_wood_EGB;
+
 let p_wallcalcite = p_wallcalcite_UIS;
 let p_water = p_water_UIS;
 let p_waterdrip = p_waterdrip_EGB;
